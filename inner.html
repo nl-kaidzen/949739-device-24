@@ -8,7 +8,7 @@
 
 <body>
   <header>
-    <a class="logo">DEVICE</a>
+    <a class="logo href=" index.html">DEVICE</a>
     <input type="text" class="search" placeholder="Поиск по сайту">
     <input type="button" value='Найти'>
     <div class="header-user-link">
@@ -20,7 +20,7 @@
     <nav>
       <ul class="main-menu">
         <li class="menu-item catalog">
-          <a href="catalog.html">Каталог товаров</a>
+          <a>Каталог товаров</a>
           <ul class="catalog-list">
             <li class="catalog-item"><a href="vr.html">Виртуальная реальность</a></li>
             <li class="catalog-item"><a href="inner.html">Моноподы для селфи</a></li>
@@ -42,11 +42,11 @@
       <ul class="breadcrumbs">
         <li>
           <a href="index.html">Главная</a>
-          <span> > </span>
+          <!--Стрелки вбок через псевдоэлемет и CSS-->
         </li>
         <li>
           <a href="#">Каталог товаров</a>
-          <span> > </span>
+          <!--Стрелки вбок через псевдоэлемет b CSS-->
         </li>
         <li>
           <a class="current">Моноподы для селфи</a>
@@ -54,59 +54,59 @@
       </ul>
     </section>
     <section class="item-filtres">
+      <h2>Фильтр:</h2>
       <form action="" method="post">
-        <fieldset>
-          <legend>Фильтр:</legend>
-          <input type="text" name="" id="price">
-          <label for="price">Стоимость</label>
-          <input type="range" name="" id="" min="0" max="9000">
-          <h2>Цвет:</h2>
-          <ul class="item-color">
-            <li>
-              <input type="checkbox" name="color-black" id="black" checked>
-              <label for="black">Черный</label>
-            </li>
-            <li>
-              <input type="checkbox" name="color-white" id="white">
-              <label for="white">Белый</label>
-            </li>
-            <li>
-              <input type="checkbox" name="color-blue" id="blue" checked>
-              <label for="blue">Синий</label>
-            </li>
-            <li>
-              <input type="checkbox" name="color-red" id="red" checked>
-              <label for="red">Красный</label>
-            </li>
-            <li>
-              <input type="checkbox" name="color-pink" id="pink">
-              <label for="pink">Розовый</label>
-            </li>
-          </ul>
-          <h2>Bluetooth:</h2>
-          <ul class="item-bluetooth">
-            <li>
-              <input type="radio" name="yes" id="radio-yes">
-              <label for="radio-yes">Есть</label>
-            </li>
-            <li>
-              <input type="radio" name="no" id="radio-no">
-              <label for="radio-no">Нет</label>
-            </li>
-          </ul>
-          <input type="button" value="Показать">
-        </fieldset>
+        <input type="text" name="" id="price">
+        <label for="price">Стоимость</label>
+        <input type="range" name="" id="" min="0" max="9000">
+        <h3>Цвет:</h3>
+        <ul class="item-color">
+          <li>
+            <input type="checkbox" name="color-black" id="black" value="black" checked>
+            <label for="black">Черный</label>
+          </li>
+          <li>
+            <input type="checkbox" name="color-white" id="white" value="white">
+            <label for="white">Белый</label>
+          </li>
+          <li>
+            <input type="checkbox" name="color-blue" id="blue" value="blue" checked>
+            <label for="blue">Синий</label>
+          </li>
+          <li>
+            <input type="checkbox" name="color-red" id="red" value="red" checked>
+            <label for="red">Красный</label>
+          </li>
+          <li>
+            <input type="checkbox" name="color-pink" id="pink" value="pink">
+            <label for="pink">Розовый</label>
+          </li>
+        </ul>
+        <h3>Bluetooth:</h3>
+        <ul class="item-bluetooth">
+          <li>
+            <input type="radio" name="yes" id="radio-yes" value="yes">
+            <label for="radio-yes">Есть</label>
+          </li>
+          <li>
+            <input type="radio" name="no" id="radio-no" value="no">
+            <label for="radio-no">Нет</label>
+          </li>
+        </ul>
+        <input type="button" value="Показать">
       </form>
     </section>
     <section class="catalog-sorting">
-      <fieldset>
-        <legend>Сортировка:</legend>
-        <a href="">По цене</a>
-        <a href="">По типу</a>
-        <a href="">По популярнасти</a>
-        <span class="sorting-from-less"> ^ </span>
-        <span class="sorting-from-bigest"> v </span>
-      </fieldset>
+      <h2>Сортировка</h2>
+      <ul class="sorting-list">
+        <li class="sorting-type"><a href="#">По цене</a></li>
+        <li class="sorting-type"><a href="#">По типу</a></li>
+        <li class="sorting-type"><a href="#">По популярнасти</a></li>
+        <li class="sorting-type"><a href="#">^</a></li>
+        <!--сменить стрелку на псевдоэлемент CSS-->
+        <li class="sorting-type"><a href="#">v</a></li>
+        <!--сменить стрелку на псевдоэлемент CSS-->
+      </ul>
     </section>
     <section class="found-item">
       <article class="item-card">
@@ -138,25 +138,23 @@
         <a href="compare.html" class="to-compare">Добавить к сравнению</a>
       </article>
     </section>
-    <section class="found-item-nav">
-      <ul class="nav-list">
-        <li class="link">
-          <a href="#" class="nav">Назад</a>
-        </li>
-        <li class="link">
-          <a href="#" class="nav">1</a>
-        </li>
-        <li class="link">
-          <a href="#" class="nav">2</a>
-        </li>
-        <li class="link">
-          <a href="#" class="nav">3</a>
-        </li>
-        <li class="link">
-          <a href="#" class="nav">Вперед</a>
-        </li>
-      </ul>
-    </section>
+    <ul class="nav-list">
+      <li class="link">
+        <a href="#" class="nav-before">Назад</a>
+      </li>
+      <li class="link">
+        <a href="#" class="nav">1</a>
+      </li>
+      <li class="link">
+        <a href="#" class="nav">2</a>
+      </li>
+      <li class="link">
+        <a href="#" class="nav">3</a>
+      </li>
+      <li class="link">
+        <a href="#" class="nav-forward">Вперед</a>
+      </li>
+    </ul>
   </main>
   <footer>
     <div class="footer-left">
@@ -164,13 +162,11 @@
       <address>г. Москва, ул. Строителей, 15</address>
     </div>
     <div class="footer-center">
-      <div class="footer-links">
-        <ul class="footet-links-list">
-          <li class="footer-link"><a href="delivery.html">Доставка</a></li>
-          <li class="footer-link"><a href="warranty.html">Гарантия</a></li>
-          <li class="footer-link"><a href="contacts.html">Контакты</a></li>
-        </ul>
-      </div>
+      <ul class="footet-links-list">
+        <li class="footer-link"><a href="delivery.html">Доставка</a></li>
+        <li class="footer-link"><a href="warranty.html">Гарантия</a></li>
+        <li class="footer-link"><a href="contacts.html">Контакты</a></li>
+      </ul>
       <ul class="footer-social">
         <li><a href="facebook.com" class="social-btn"></a></li>
         <li><a href="insatagram.com" class="social-btn"></a></li>
@@ -184,7 +180,7 @@
         <li><a href="cart.html">Корзина</a></li>
       </ul>
       <a href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
-      <a href="htmlacademy.ru" class="creater-logo">htmlacademy.ru</a>
+      <a href="https://htmlacademy.ru/intensive/htmlcss" class="creater-logo">htmlacademy.ru</a>
     </div>
   </footer>
 </body>
