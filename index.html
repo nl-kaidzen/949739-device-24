@@ -8,10 +8,10 @@
 
 <body>
   <header>
-    <a class="header_logo">Device</a>
+    <a class="header-logo" aria-label="Логотип интернет-магазина" lang="en">Device</a>
     <input type="text" class="search" placeholder="Поиск по сайту">
     <input type="button" value='Найти'>
-    <ul class="header-user-link">
+    <ul class="header-user-link" aria-label="Пользовательское меню">
       <li><a href="login.html">Войти</a></li>
       <li><a href="compare.html">Сравнить</a></li>
       <li><a href="cart.html">Корзина</a></li>
@@ -45,15 +45,15 @@
         <li>o</li>
       </ul>
       <section class="slide-first">
-        <img src="img/promo_slide-1.png" alt="Монопод длиной 8.5 метров" height="400" weight="400">
+        <img src="img/promo-monopod.png" alt="Монопод длиной 8.5 метров" height="400" weight="400">
         <span class="slide-number">01</span>
         <p>Делай селфи,<br>
           как Бен Стиллер!
         </p>
         <p>Самая длинная палка для селфи доступна в нашем магазине.<br>
           Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
-        <a href="main-monopod.html"></a>
-        <ul class="slider-features">
+        <a href="promo-monopod.html">Подробнее</a>
+        <ul class="slider-features" aria-label="Преимущества товара:"> <!--Нужен aria-label?-->
           <li>
             <span class="feature-value">8.5 м</span>
             <span class="feature-label">Длина палки</span>
@@ -68,15 +68,15 @@
         </ul>
       </section>
       <section class="slide-second">
-        <img src="img/promo_slide-2.png" alt="Смарт браслет" height="400" weight="400">
+        <img src="img/promo-smartband.png" alt="Смарт браслет" height="400" weight="400">
         <span class="slide-number">02</span>
         <p>Худеем<br>
           правильно!
         </p>
         <p>Мотивирующие фитнесc-браслеты помогут найти в себе силы<br>
           не пропускать занятия и соблюдать диету.</p>
-        <a href="main-fitness.html"></a>
-        <ul class="slider-features">
+        <a href="promo-fitness.html">Подробнее</a>
+        <ul class="slider-features" aria-label="Преимущества товара:"> <!--Нужен aria-label?-->
           <li>
             <span class="feature-value">48 часов</span>
             <span class="feature-label">Без подзарядки</span>
@@ -84,15 +84,15 @@
         </ul>
       </section>
       <section class="slide-third">
-        <img src="img/promo_slide-3.png" alt="Квадрокоптер" height="400" weight="400">
+        <img src="img/promo-drone.png" alt="Квадрокоптер" height="400" weight="400">
         <span class="slide-number">03</span>
         <p>Порхает как бабочка,<br>
           жалит как пчела!
         </p>
         <p>Этот обычный, на первый взгляд, квадрокоптер оснащен<br>
           мощным лазером, замаскированным под стандартную камеру..</p>
-        <a href="main-drone.html"></a>
-        <ul class="slider-item3-facts">
+        <a href="promo-drone.html">Подробнее</a>
+        <ul class="slider-features" aria-label="Преимущества товара:"> <!--Нужен aria-label?-->
           <li>
             <span class="feature-value">800 м</span>
             <span class="feature-label">Дальность полета</span>
@@ -215,22 +215,22 @@
       <ul class="partners-list">
         <li>
           <a href="dji.com">
-            <img src="img/partner_1.jpg" alt="DJI">
+            <img src="img/partner-dji.jpg" lang="en" alt="DJI">
           </a>
         </li>
         <li>
           <a href="spgadgets.com">
-            <img src="img/partner_2.jpg" alt="SPGadgets">
+            <img src="img/partner-spgadgets.jpg" lang="en" alt="SPGadgets">
           </a>
         </li>
         <li>
           <a href="gopro.com">
-            <img src="img/partner_3.jpg" alt="GoPro">
+            <img src="img/partner-gopro.jpg" lang="en" alt="GoPro">
           </a>
         </li>
         <li>
           <a href="vive.com">
-            <img src="img/partner_4.jpg" alt="VIVE">
+            <img src="img/partner-vive.jpg" lang="en" alt="VIVE">
           </a>
         </li>
       </ul>
@@ -252,32 +252,32 @@
       <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки.
         Всякое бывает.</p>
       <a href="#" class="map-modal">  <!--Добавить ссылку на модальное окно-->
-        <img src="img/map.jpg" alt="Карта с адресом пункта вывоза" class="contacts-map">
+        <img src="img/map.jpg" alt="Карта с адресом пункта вывоза по адресу г. Москва, ул. Строителей, 15" class="contacts-map">
       </a>
       <a href="write-us.html" class="write-us device-btn">Напишите нам</a>
     </section>
   </main>
   <footer>
     <div class="footer-left">
-      <a href="index.html" class="footer_logo">Device</a>
+      <a class="footer_logo" aria-label="Логотип интернет-магазина" lang="en">Device</a>              <!--Нужен aria-label?-->
       <address>г. Москва, ул. Строителей, 15</address>
     </div>
     <div class="footer-center">
-      <ul class="footet-links-list">
+      <ul class="footet-links-list">                                            <!--Нужен aria-label или подпись h3?-->
         <li class="footer-link"><a href="delivery.html">Доставка</a></li>
         <li class="footer-link"><a href="warranty.html">Гарантия</a></li>
         <li class="footer-link"><a href="contacts.html">Контакты</a></li>
       </ul>
-      <ul class="footer-social">
+      <ul class="footer-social" aria-label="Наша компания в соцсетях">
         <li>
-          <a href="facebook.com" class="social-btn">
+          <a href="facebook.com" class="social-btn" aria-label="Девайс в Фейсбук">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
               <path fill="#FFF" d="M16 0C7.164 0 0 7.163 0 16s7.164 16 16 16c8.837 0 16-7.164 16-16S24.837 0 16 0zm4.062 9.455h-3.021v3.444h3.021v3.445h-3.021v8.61H14.02v-8.61H11v-3.445h3.021V9.455c0-1.902 1.353-3.445 3.021-3.445h3.021v3.445z"/>
             </svg>
           </a>
         </li>
         <li>
-          <a href="insatagram.com" class="social-btn">
+          <a href="insatagram.com" class="social-btn" aria-label="Девайс в Инстаграм">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
               <g fill="#FFF">
                 <path d="M20.916 16c0 2.728-2.211 4.938-4.938 4.938s-4.939-2.21-4.939-4.938c0-.394.051-.773.138-1.14h-.897v6.838h11.396V14.86h-.897c.086.367.137.746.137 1.14z"/>
@@ -287,7 +287,7 @@
           </a>
         </li>
         <li>
-          <a href="twitter.com" class="social-btn">
+          <a href="twitter.com" class="social-btn" aria-label="Девайс в Твиттер">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
               <path fill="#FFF" d="M16 0C7.164 0 0 7.164 0 16c0 8.837 7.164 16 16 16 8.837 0 16-7.163 16-16 0-8.836-7.163-16-16-16zm7.944 12.809c-.251 6.516-3.463 10.832-10.992 10.702h-.486c-.447 0-4.543-.443-5.344-1.823 2.479.19 4.247-.406 5.12-1.136-1.048-.289-2.923-.461-3.251-2.848.384.104.618.221 1.299.113-1.307-.824-2.758-1.519-2.679-3.643.311.317 1.164.518 1.46.457-.768-.233-2.149-3.244-.974-4.781 1.984 1.79 4.075 3.482 7.804 3.643.227-2.214 1.24-3.699 3.168-4.325 1.84-.479 3.255.26 3.901 1.138.737-.224 1.453-.466 2.193-.685-.004.833-.569 1.463-.935 1.709.747.165 1.423-.475 1.423-.475-.184.963-1.094 1.725-1.707 1.954z"/>
             </svg>
@@ -296,13 +296,13 @@
       </ul>
     </div>
     <div class="footer-right">
-      <ul class="footer-user-link">
+      <ul class="footer-user-link" aria-label="Пользовательское меню">
         <li><a href="login.html">Войти</a></li>
         <li><a href="compare.html">Сравнить</a></li>
         <li><a href="cart.html">Корзина</a></li>
       </ul>
       <a href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
-      <a href="https://htmlacademy.ru/intensive/htmlcss" class="creater-logo">
+      <a href="https://htmlacademy.ru/intensive/htmlcss" class="creater-logo" aria-label="Разработчик сайта - HTMLAcademy">
         <svg xmlns="http://www.w3.org/2000/svg" width="26.943" height="34.09">
           <path d="M13.62.017L13.472 0 0 1.412v24.661l13.473 8.017 13.43-7.99.042-.025V1.412L13.62.017zm11.399 12.11L13.495 5.334l-.001-.104-.087.05-.088-.056v.109L1.925 12.118V3.147l11.548-1.212L25.02 3.147v8.98zm-11.614-5.34L24.923 13.5l-4.479 2.64-7.093-4.221-.014 1.415 5.904 3.513-.86.507-5.03-2.992-.014 1.415 3.827 2.275-.782.523-3.031-1.787-.014 1.413 1.853 1.091-1.8 1.081-11.356-6.751 11.371-6.835zm-11.48 8.34l11.411 6.791.016 1.044-7.942-4.728-.015 1.416 7.979 4.795.018 1.076-7.973-4.74-.013 1.414 8.021 4.822.046.025 8.143-4.872-.011-5.177 3.415-2.036v10.021L13.472 31.85 1.925 24.979v-9.852z" fill="#ffc600"/>
         </svg>
@@ -324,11 +324,11 @@
       </p>
       <button type="submit">Отправить</button>
     </form>
-    <button type="button">Х</button>
+    <button type="button" aria-label="Закрыть форму">Х</button>
   </section>
   <section class="modal modal-map">
     <h2 class="visually-hidden">Как до нас добраться</h2>
-    <button type="button">Х</button>
+    <button type="button" aria-label="Закрыть форму">Х</button>
   </section>
 </body>
 
