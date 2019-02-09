@@ -1,0 +1,289 @@
+body {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.15px;
+  margin: 0px;
+  padding: 0px;
+  }
+@font-face {
+  font-family: 'Gilroy ExtraBold';
+  src: url('../fonts/gilroyextrabold-webfont.woff2') format('woff2'),
+       url('../fonts/gilroyextrabold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'Gilroy Light';
+  src: url('../fonts/gilroylight-webfont.woff2') format('woff2'),
+       url('../fonts/gilroylight-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+a {
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 18px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 24px;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+  text-decoration-line: none;
+  color: #000000;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+/*_____________Начало стилизации блока "Хедер и навигация"______________________*/
+header {
+  background-color: rgba(240, 197, 46, 0.5);
+}
+
+header a:focus,
+header a:hover {
+  color: rgba(0, 0, 0, 0.6);   /*Перекрасить SVG*/
+}
+
+header input {
+  font: inherit;
+  line-height: 30px;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.3);
+  border: none;
+  background-color: transparent;
+}
+
+header input:hover,
+header input:focus {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid black;
+}
+/*
+header input:focus {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: #000000
+}*/
+
+.header-user-link a {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+  text-decoration: none;
+  text-transform: none;
+  color: black;
+}
+
+.menu-item a {
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 3,6px;
+  color: black;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.catalog-item a {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 36px;
+  letter-spacing: 0.2px;
+  color: #000000;
+  text-transform: none;
+}
+
+.header-user-link a:focus,
+.header-user-link a:hover,
+.menu-item a:focus,
+.menu-item a:hover,
+.catalog-item a:focus,
+.catalog-item a:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.header-user-link a:active,
+.menu-item a:active,
+.catalog-item a:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/*_____________Конец стилизации блока "Хедер и навигация"______________________*/
+
+/*_____________Начало стилизации блока "Промо-слайдер"______________________*/
+.slide-first p:first-of-type,
+.slide-second p:first-of-type,
+.slide-third p:first-of-type  {
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 47px;
+  font-weight: 800;
+  line-height: 56px;
+  letter-spacing: 0.5px;
+  color: #000000;
+}
+
+.slide-number {
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 179px;
+  font-weight: 800;
+  line-height: 179px;
+  letter-spacing: 1.8px;
+  text-align: right;
+  color: #ffffff;
+  background-color: rgba(240, 197, 46, 0.5); /*-----Временно, что бы не потерялся на белом фоне-----*/
+}
+
+.feature-value {
+  font-family: 'Gilroy Light', 'Arial', 'sans-serif';
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 48px;
+  letter-spacing: 0.36px;
+}
+
+.feature-label {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 0.13px;
+  color: #464646;
+}
+
+.promo-btn {
+  min-width: 220px;
+  min-height: 40px;
+  position: relative;
+  padding: 9px 5px;
+  background-color: transparent;
+}
+
+.promo-btn::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 20%;
+  background-color: #f0c52e;
+}
+
+.promo-container a:focus,
+.promo-container a:hover {
+  width: 220px;
+  height: 40px;
+  color: rgba(0, 0, 0, 0.6);
+  background-color: #f0c52e;
+}
+
+.promo-container a:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+/*_____________Конец стилизации блока "Промо-слайдер"______________________*/
+
+/*_____________Начало стилизации блока "Категории товаров"______________________*/
+.product-btn {
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  text-transform: none;
+  color: #000000;
+}
+
+.products-list a {
+  background-color: #f0c52e;
+}
+/*_____________Конец стилизации блока "Категории товаров"______________________*/
+
+/*_____________Начало стилизации блока сервисы______________________*/
+.services {
+  background-color: #e5e5e5
+}
+
+.service-item h2,
+.info h2,
+.contacts h2 {
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 47px;
+  font-weight: 800;
+  line-height: 48px;
+  letter-spacing: 0.48px;
+  color: #000000;
+}
+/*_____________Конец стилизации блока сервисы______________________*/
+
+/*_____________Начало стилизации блока Футер______________________*/
+footer {
+  background-color: #464646
+}
+
+address {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 30px;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.footer-links-list a {
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 3,6px;
+  text-decoration: none;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.footer-user-link a {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 36px;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-right a {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+  text-align: right;
+  text-decoration: none;
+  text-transform: none;
+  color: #ffffff;
+}
+/*_____________Конец стилизации блока Футер______________________*/
