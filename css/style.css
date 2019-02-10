@@ -42,7 +42,11 @@ li {
 
 /*_____________Начало стилизации блока "Хедер и навигация"______________________*/
 header {
+  width: 1160px;
   background-color: rgba(240, 197, 46, 0.5);
+  position: relative;
+  margin: auto;
+  margin-top: 40px;
 }
 
 header a:focus,
@@ -242,7 +246,7 @@ header input:focus {
 }
 
 .promo-container {
-  width: 700px;
+  width: 1160px;
   /*overfolw: hidden;*/
 }
 
@@ -258,6 +262,15 @@ header input:focus {
 /*_____________Конец стилизации блока "Промо-слайдер"______________________*/
 
 /*_____________Начало стилизации блока "Категории товаров"______________________*/
+.products {
+  width: 1160px;
+  margin: 0;
+}
+
+.products-list {
+  display: flex;
+  justify-content: space-between;
+}
 .product-btn {
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
   font-size: 18px;
@@ -269,7 +282,26 @@ header input:focus {
   color: #000000;
 }
 
+.product-btn p {
+  white-space: normal;
+  width: 160px;
+}
+.btn-bg {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  background-color:rgba(240, 197, 46, 0.5);
+}
+.btn-bg:hover {
+  background-color: #f0c52e;
+}
 
+.btn-bg svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
 /*_____________Конец стилизации блока "Категории товаров"______________________*/
 
 /*_____________Начало стилизации блока сервисы______________________*/
