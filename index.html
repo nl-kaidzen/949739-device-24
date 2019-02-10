@@ -17,7 +17,7 @@
     </a>   <!--Через ссылку или SVG-->
     <form action="echo.htmlacademy.ru" method="get" class="search-form">
       <input type="search" class="search" placeholder="Поиск по сайту">
-      <button type="submit">Найти</button>
+      <button type="submit" class="search-btn">Найти</button>
     </form>
     <ul class="header-user-link">
       <li><a href="login.html">Войти</a></li>
@@ -48,69 +48,71 @@
     <section class="promo-container">
       <h2 class="visually-hidden">Популярные товары</h2>
       <ul class=slider-btn>
-        <li>o</li>
-        <li>o</li>
-        <li>o</li>
+        <li><input type="radio" name="slider-control" id="btn-1"></li>
+        <li><input type="radio" name="slider-control" id="btn-2"></li>
+        <li><input type="radio" name="slider-control" id="btn-3"></li>
       </ul>
-      <section class="slide-first">
-        <img src="img/promo-monopod.png" alt="Монопод длиной 8.5 метров" height="486" width="384">
-        <span class="slide-number">01</span>
-        <p>Делай селфи,<br>
-          как Бен Стиллер!
-        </p>
-        <p>Самая длинная палка для селфи доступна в нашем магазине.<br>
-          Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
-        <a href="promo-monopod.html" class="promo-btn">Подробнее</a>
-        <ul class="slider-features" aria-label="Преимущества товара:"> <!--Нужен aria-label?-->
-          <li>
-            <span class="feature-value">8.5 м</span>
-            <span class="feature-label">Длина палки</span>
-          </li>
-          <li>
-            <span class="feature-value">5 кг</span>
-            <span class="feature-label">Вес палки</span>
-          </li>
-          <li>
-            <span class="feature-value">Карбон</span>
-            <span class="feature-label">Материал</span></li>
-        </ul>
-      </section>
-      <section class="slide-second">
-        <img src="img/promo-smartband.png" alt="Смарт браслет" height="485" width="345">
-        <span class="slide-number">02</span>
-        <p>Худеем<br>
-          правильно!
-        </p>
-        <p>Мотивирующие фитнесc-браслеты помогут найти в себе силы<br>
-          не пропускать занятия и соблюдать диету.</p>
-        <a href="promo-fitness.html" class="promo-btn">Подробнее</a>
-        <ul class="slider-features">
-          <li>
-            <span class="feature-value">48 часов</span>
-            <span class="feature-label">Без подзарядки</span>
-          </li>
-        </ul>
-      </section>
-      <section class="slide-third">
-        <img src="img/promo-drone.png" alt="Квадрокоптер" height="334" width="526">
-        <span class="slide-number">03</span>
-        <p>Порхает как бабочка,<br>
-          жалит как пчела!
-        </p>
-        <p>Этот обычный, на первый взгляд, квадрокоптер оснащен<br>
-          мощным лазером, замаскированным под стандартную камеру..</p>
-        <a href="promo-drone.html" class="promo-btn">Подробнее</a>
-        <ul class="slider-features">
-          <li>
-            <span class="feature-value">800 м</span>
-            <span class="feature-label">Дальность полета</span>
-          </li>
-          <li>
-            <span class="feature-value">50 м</span>
-            <span class="feature-label">Радиус поражения</span>
-          </li>
-        </ul>
-      </section>
+      <div class="slider-container">
+        <section class="slide-first">
+          <img src="img/promo-monopod.png" alt="Монопод длиной 8.5 метров" height="486" width="384">
+          <span class="slide-number">01</span>
+          <p>Делай селфи,<br>
+            как Бен Стиллер!
+          </p>
+          <p>Самая длинная палка для селфи доступна в нашем магазине.<br>
+            Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
+          <a href="promo-monopod.html" class="device-btn">Подробнее</a>
+          <ul class="slider-features" aria-label="Преимущества товара:"> <!--Нужен aria-label?-->
+            <li>
+              <span class="feature-value">8.5 м</span>
+              <span class="feature-label">Длина палки</span>
+            </li>
+            <li>
+              <span class="feature-value">5 кг</span>
+              <span class="feature-label">Вес палки</span>
+            </li>
+            <li>
+              <span class="feature-value">Карбон</span>
+              <span class="feature-label">Материал</span></li>
+          </ul>
+        </section>
+        <section class="slide-second">
+          <img src="img/promo-smartband.png" alt="Смарт браслет" height="485" width="345">
+          <span class="slide-number">02</span>
+          <p>Худеем<br>
+            правильно!
+          </p>
+          <p>Мотивирующие фитнесc-браслеты помогут найти в себе силы<br>
+            не пропускать занятия и соблюдать диету.</p>
+          <a href="promo-fitness.html" class="device-btn">Подробнее</a>
+          <ul class="slider-features">
+            <li>
+              <span class="feature-value">48 часов</span>
+              <span class="feature-label">Без подзарядки</span>
+            </li>
+          </ul>
+        </section>
+        <section class="slide-third">
+          <img src="img/promo-drone.png" alt="Квадрокоптер" height="334" width="526">
+          <span class="slide-number">03</span>
+          <p>Порхает как бабочка,<br>
+            жалит как пчела!
+          </p>
+          <p>Этот обычный, на первый взгляд, квадрокоптер оснащен<br>
+            мощным лазером, замаскированным под стандартную камеру..</p>
+          <a href="promo-drone.html" class="device-btn">Подробнее</a>
+          <ul class="slider-features">
+            <li>
+              <span class="feature-value">800 м</span>
+              <span class="feature-label">Дальность полета</span>
+            </li>
+            <li>
+              <span class="feature-value">50 м</span>
+              <span class="feature-label">Радиус поражения</span>
+            </li>
+          </ul>
+        </section></div>
+
     </section>
     <section class="products">
       <h2 class="visually-hidden">Категории товаров</h2>
@@ -223,22 +225,22 @@
       <h2 class="visually-hidden">Наши партнеры и поставщики</h2>
       <ul class="partners-list">
         <li>
-          <a href="dji.com" aria-label="dji">
+          <a href="dji.com" aria-label="Перейти на сайт dji">
             <img src="img/partner-dji.jpg" alt="Логотип-DJI">
           </a>
         </li>
         <li>
-          <a href="spgadgets.com" aria-label="spgadgets">
+          <a href="spgadgets.com" aria-label="Перейти на сайт spgadgets">
             <img src="img/partner-spgadgets.jpg" alt="Логотип-SPGadgets">
           </a>
         </li>
         <li>
-          <a href="gopro.com" aria-label="gopro">
+          <a href="gopro.com" aria-label="Перейти на сайт gopro">
             <img src="img/partner-gopro.jpg" alt="Логотип-GoPro">
           </a>
         </li>
         <li>
-          <a href="vive.com" aria-label="vive">
+          <a href="vive.com" aria-label="Перейти на сайт vive">
             <img src="img/partner-vive.jpg" alt="Логотип-VIVE">
           </a>
         </li>
@@ -314,7 +316,7 @@
         <li><a href="compare.html">Сравнить</a></li>
         <li><a href="cart.html">Корзина</a></li>
       </ul>
-      <a href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
+      <a href="tel:+74954959595" class="phone-number">Тел.: +7 (495) 495-95-95</a>
       <a href="https://htmlacademy.ru/intensive/htmlcss" class="creater-logo" aria-label="Разработчик сайта - HTMLAcademy">
         <svg xmlns="http://www.w3.org/2000/svg" width="26.943" height="34.09">
           <path d="M13.62.017L13.472 0 0 1.412v24.661l13.473 8.017 13.43-7.99.042-.025V1.412L13.62.017zm11.399 12.11L13.495 5.334l-.001-.104-.087.05-.088-.056v.109L1.925 12.118V3.147l11.548-1.212L25.02 3.147v8.98zm-11.614-5.34L24.923 13.5l-4.479 2.64-7.093-4.221-.014 1.415 5.904 3.513-.86.507-5.03-2.992-.014 1.415 3.827 2.275-.782.523-3.031-1.787-.014 1.413 1.853 1.091-1.8 1.081-11.356-6.751 11.371-6.835zm-11.48 8.34l11.411 6.791.016 1.044-7.942-4.728-.015 1.416 7.979 4.795.018 1.076-7.973-4.74-.013 1.414 8.021 4.822.046.025 8.143-4.872-.011-5.177 3.415-2.036v10.021L13.472 31.85 1.925 24.979v-9.852z" fill="#ffc600"/>
@@ -335,13 +337,13 @@
         <label for="subject">Текст письма</label>
         <textarea name="subject" id="subject" cols="30" rows="5" placeholder="В свободной форме"></textarea>
       </p>
-      <button type="submit">Отправить</button>
+      <button type="submit" class="device-btn submit-letter">Отправить</button>
     </form>
-    <button type="button" aria-label="Закрыть форму">Х</button>      <!--Или ссылку-->
+    <button type="button" aria-label="Закрыть форму" class="close-btn"></button>      <!--Или ссылку-->
   </section>
   <section class="modal modal-map">
     <h2 class="visually-hidden">Как до нас добраться</h2>
-    <button type="button" aria-label="Закрыть форму">Х</button>       <!--Или ссылку-->
+    <button type="button" aria-label="Закрыть форму" class="close-btn"></button>       <!--Или ссылку-->
   </section>
 </body>
 

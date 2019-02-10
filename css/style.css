@@ -51,6 +51,8 @@ header a:hover {
 }
 
 header input {
+  height: 49px;
+  width: 200px;
   font: inherit;
   line-height: 30px;
   letter-spacing: 0.2px;
@@ -62,6 +64,8 @@ header input {
 
 header input:hover,
 header input:focus {
+  height: 49px;
+  width: 200px;
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300;
@@ -69,7 +73,42 @@ header input:focus {
   letter-spacing: 0.2px;
   text-align: left;
   color: rgba(0, 0, 0, 0.6);
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
+}
+
+.search-btn {
+  font: inherit;
+  height: 49px;
+  width: 85px;
+  border: 2px solid black;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.search-btn:focus {
+  font: inherit;
+  height: 49px;
+  width: 85px;
+  border: 2px solid black;
+  background-color: transparent;
+}
+
+.search-btn:hover {
+  font: inherit;
+  height: 49px;
+  width: 85px;
+  color: white;
+  border: 2px solid black;
+  background-color: #000000;
+}
+
+.search-btn:active {
+  font: inherit;
+  height: 49px;
+  width: 85px;
+  color: rgba(255, 255, 255, 0.3);
+  border: 2px solid black;
+  background-color: #000000;
 }
 /*
 header input:focus {
@@ -171,7 +210,7 @@ header input:focus {
   color: #464646;
 }
 
-.promo-btn {
+.device-btn {
   min-width: 220px;
   min-height: 40px;
   position: relative;
@@ -179,7 +218,7 @@ header input:focus {
   background-color: transparent;
 }
 
-.promo-btn::before {
+.device-btn::before {
   content: "";
   position: absolute;
   top: 40%;
@@ -190,17 +229,32 @@ header input:focus {
   background-color: #f0c52e;
 }
 
-.promo-container a:focus,
-.promo-container a:hover {
+.device-btn:focus,
+.device-btn:hover {
   width: 220px;
   height: 40px;
   color: rgba(0, 0, 0, 0.6);
   background-color: #f0c52e;
 }
 
-.promo-container a:active {
+.device-btn:active {
   color: rgba(0, 0, 0, 0.3);
 }
+
+.promo-container {
+  width: 700px;
+  /*overfolw: hidden;*/
+}
+
+.slider-container {
+  width: 300%;
+}
+
+.slider-container section {
+  float: left;
+  min-height: 980px; /*Временно что бы категории не наезжали*/
+}
+
 /*_____________Конец стилизации блока "Промо-слайдер"______________________*/
 
 /*_____________Начало стилизации блока "Категории товаров"______________________*/
@@ -215,15 +269,10 @@ header input:focus {
   color: #000000;
 }
 
-.products-list a {
-  background-color: #f0c52e;
-}
+
 /*_____________Конец стилизации блока "Категории товаров"______________________*/
 
 /*_____________Начало стилизации блока сервисы______________________*/
-.services {
-  background-color: #e5e5e5
-}
 
 .service-item h2,
 .info h2,
@@ -235,7 +284,25 @@ header input:focus {
   letter-spacing: 0.48px;
   color: #000000;
 }
+
+.services {
+  background-color: #e5e5e5;
+}
 /*_____________Конец стилизации блока сервисы______________________*/
+
+/*_____________Блок Партнеры_______________*/
+
+/*_________Секция "О нас"_______*/
+.info-logistics-company {
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+  color: #000000;
+}
+
+/*_________Секция "Контакты"__________*/
 
 /*_____________Начало стилизации блока Футер______________________*/
 footer {
@@ -264,26 +331,336 @@ address {
   color: #ffffff;
 }
 
+.footer-links-list a:hover {                      /*состояние focus не описано в стайлгайде*/
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-links-list a:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 .footer-user-link a {
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300;
-  line-height: 36px;
+  font-style: normal;
+  line-height: 30px;
   letter-spacing: 0.2px;
   text-decoration: none;
   text-transform: none;
   color: rgba(255, 255, 255, 0.7);
 }
 
-.footer-right a {
+.footer-user-link a:hover {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 30px;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  text-transform: none;
+  color: #ffffff;
+}
+
+.footer-user-link a:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.phone-number {
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300;
   line-height: 30px;
-  letter-spacing: 0.15px;
+  letter-spacing: normal;
   text-align: right;
   text-decoration: none;
   text-transform: none;
   color: #ffffff;
 }
 /*_____________Конец стилизации блока Футер______________________*/
+/*_____________Начало блока Модальное окно_______________________*/
+.modal label {
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 24px;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+
+.submit-letter {
+  width: 200px;
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 18px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 24px;
+  letter-spacing: 3.6px;
+  text-align: center;
+  color: #000000;
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+}
+
+.modal input {
+  width: 320px;
+  height: 50px;
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 18px;
+  letter-spacing: normal;
+  text-align: left;
+  padding: 0 20px;
+  color: rgba(70, 70, 70, 0.4);
+  background-color: #f2f2f2;
+  border: none;
+}
+
+.modal input:hover {
+  background-color: #eaeaea;
+  border: none;
+}
+
+.modal input:focus {
+  width: 320px;
+  height: 44px;
+  padding: 0 17px;
+  background-color: #ffffff;
+  border: 3px solid #f0c52e;
+  color: #464646;
+}
+
+.modal input:invalid {
+  background-color: #f6dada;
+}
+
+.modal textarea {
+  width: 760px;
+  height: 156px;
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 18px;
+  letter-spacing: normal;
+  text-align: left;
+  padding: 18px 20px;
+  color: rgba(70, 70, 70, 0.4);
+  background-color: #f2f2f2;
+  border: none;
+}
+.close-btn {
+  width: 55px;
+  height: 55px;
+  position: relative;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.close-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: url('../img/modal-close.png') no-repeat;
+}
+
+.close-btn::before:hover {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: url('../img/modal-close-hover.png') no-repeat;
+}
+/*__________________________________Конец блока Модальные окна____________________*/
+
+
+/*__________________________________страница каталога____________________________*/
+.catalog-nav h1 {
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 47px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 48px;
+  letter-spacing: 0.47px;
+  text-align: left;
+  color: #000000;
+}
+
+.breadcrumbs a {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 24px;
+  letter-spacing: 0.14px;
+  text-align: left;
+  text-transform: none;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.breadcrumbs a:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.breadcrumbs a:active {
+  color: rgba(0, 0, 0, 0.1);
+}
+/*______________________________________Колонка Фильров_________________________*/
+
+.item-filtres {
+  width: 328px;
+  background-color: #ebebeb;
+  float: left;                      /*________Убрать float_______*/
+}
+
+.item-filtres h2,
+.catalog-sorting h2 {
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 16px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 24px;
+  letter-spacing: 3.2px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #000000;
+}
+/*_______________________________________Колонка Сортировки____________________________*/
+.catalog-sorting,
+.sorting-list {
+  width: 832px;
+  background-color: #ebebeb;
+}
+
+.sorting-list a {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 18px;
+  letter-spacing: normal;
+  text-align: left;
+  text-transform: none;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.sorting-list a:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+.sorting-list a:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.sorting-list a:active {
+  color: rgba(0, 0, 0, 1);
+}
+/*______________________________________Колонка найденных товаров__________________________*/
+
+.to-compare {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 20px;
+  letter-spacing: 0.13px;
+  text-align: center;
+  text-transform: none;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.to-compare:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+.to-compare:active {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.item-card h3 {
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 18px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 24px;
+  letter-spacing: 0.18px;
+  text-align: left;
+  text-transform: none;
+  color: #000000;
+}
+
+.item-card-price {
+  width: 75px;
+  height: 14px;
+  font-family: 'Gilroy Light', 'Arial', 'sans-serif';
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 24px;
+  letter-spacing: 0.16px;
+  text-align: right;
+  text-transform: none;
+  color: #464646;
+}
+
+/*_________________________Навигация по результатам поиска____________________________________*/
+
+.nav-list {
+  background-color: #ebebeb;
+}
+
+.nav-list a {
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 16px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 24px;
+  letter-spacing: 3.2px;
+  text-align: left;
+  padding: 30px 37px 27px 30px;
+  color: rgba(0, 0, 0, 0.3);
+  float: left;
+
+}
+.nav-list a:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-list a:active{
+  color: rgba(0, 0, 0, 1);
+}
+
+.nav-btn:hover {
+  color: rgba(0, 0, 0, 1);
+  background-color: #d9d9d9;
+  padding: 30px 37px 27px 30px;
+
+
+}
+
+.nav-btn:active{
+  background-color: #d9d9d9;
+  color: rgba(0, 0, 0, 0.3);
+}
