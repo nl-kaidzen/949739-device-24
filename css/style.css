@@ -1,10 +1,4 @@
-body {
-  font-family: 'Open Sans', 'Arial', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0.15px;
-  margin: 0px;
-  padding: 0px;
-  }
+
 @font-face {
   font-family: 'Gilroy ExtraBold';
   src: url('../fonts/gilroyextrabold-webfont.woff2') format('woff2'),
@@ -21,6 +15,22 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/opensans.woff2') format('woff2'),
+       url('../fonts/opensans.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+html {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.15px;
+  margin: 0px;
+  padding: 0px;
+  }
 
 a {
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
@@ -43,33 +53,64 @@ li {
 /*_____________Начало стилизации блока "Хедер и навигация"______________________*/
 header {
   width: 1160px;
+  min-height: 300px;
   background-color: rgba(240, 197, 46, 0.5);
   position: relative;
   margin: auto;
   margin-top: 40px;
 }
 
-header a:focus,
-header a:hover {
+.header-logo {
+  position: absolute;
+  display: block;
+  top: -19px;
+  margin-left: 60px;
+}
+
+.user-nav {
+  width: 1040px;
+  margin: auto;
+  display: flex;
+  align-items: baseline;
+  padding-top: 34px;
+  padding-bottom: 33px;
+}
+
+.header-user-link {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.search-form {
+  display: flex;
+  min-width: 440px;
+  margin-right: 100px;
+}
+
+.header-logo:hover,
+.header-logo:focus {
   color: rgba(0, 0, 0, 0.6);   /*Перекрасить SVG*/
 }
 
-header input {
-  height: 49px;
-  width: 200px;
-  font: inherit;
+.search {
+  width: 355px;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   line-height: 30px;
+  font-weight: 300;
   letter-spacing: 0.2px;
   text-align: left;
   color: rgba(0, 0, 0, 0.3);
   border: none;
+  border-bottom: 2px solid transparent;
   background-color: transparent;
+  box-sizing: border-box;
+  padding: 8px 0 8px 40px;
 }
 
-header input:hover,
-header input:focus {
-  height: 49px;
-  width: 200px;
+.search:hover {
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300;
@@ -77,53 +118,56 @@ header input:focus {
   letter-spacing: 0.2px;
   text-align: left;
   color: rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
   border-bottom: 2px solid black;
+  padding: 8px 0 8px 40px;
 }
-
-.search-btn {
-  font: inherit;
-  height: 49px;
-  width: 85px;
-  border: 2px solid black;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.search-btn:focus {
-  font: inherit;
-  height: 49px;
-  width: 85px;
-  border: 2px solid black;
-  background-color: transparent;
-}
-
-.search-btn:hover {
-  font: inherit;
-  height: 49px;
-  width: 85px;
-  color: white;
-  border: 2px solid black;
-  background-color: #000000;
-}
-
-.search-btn:active {
-  font: inherit;
-  height: 49px;
-  width: 85px;
-  color: rgba(255, 255, 255, 0.3);
-  border: 2px solid black;
-  background-color: #000000;
-}
-/*
-header input:focus {
+.search:focus {
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300;
   line-height: 30px;
   letter-spacing: 0.2px;
   text-align: left;
-  color: #000000
-}*/
+  color: #000000;
+  box-sizing: border-box;
+  border-bottom: 2px solid black;
+  padding: 8px 0 8px 40px;
+  outline: transparent;
+}
+
+.search-btn {
+  font: inherit;
+  font-size: 15px;
+  width: 85px;
+  border: 2px solid black;
+  background-color: transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 8px 18px;
+}
+
+.search-btn:hover {
+  font: inherit;
+  font-size: 15px;
+  width: 85px;
+  color: white;
+  border: 2px solid black;
+  background-color: #000000;
+  box-sizing: border-box;
+  padding: 8px 18px;
+}
+
+.search-btn:active {
+  font: inherit;
+  font-size: 15px;
+  width: 85px;
+  color: rgba(255, 255, 255, 0.3);
+  border: 2px solid black;
+  background-color: #000000;
+  box-sizing: border-box;
+  padding: 8px 18px;
+}
 
 .header-user-link a {
   font-family: 'Open Sans', 'Arial', sans-serif;
@@ -134,6 +178,22 @@ header input:focus {
   text-decoration: none;
   text-transform: none;
   color: black;
+  padding-left: 30px;
+}
+.compare {
+  margin-left: 205px;
+  margin-right: 33px;
+}
+.cart {
+  margin-right: 0;
+}
+
+.main-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 1040px;
+  margin: auto;
+  padding: 0;
 }
 
 .menu-item a {
@@ -145,6 +205,25 @@ header input:focus {
   color: black;
   text-decoration: none;
   font-weight: 800;
+}
+
+.catalog {
+  min-width: 220px;
+  padding-right: 32px;
+  margin-right: 290px;
+}
+
+.delivery {
+  margin-right: 35px;
+}
+
+/*.warranty {
+
+}*/
+
+.contacts {
+  margin-left: auto;
+  margin-right: -0.2em;
 }
 
 .catalog-item a {
@@ -263,13 +342,21 @@ header input:focus {
 
 /*_____________Начало стилизации блока "Категории товаров"______________________*/
 .products {
+  display: flex;
   width: 1160px;
-  margin: 0;
+  margin: auto;
+}
+
+.products h2 {
+  display: none;
 }
 
 .products-list {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 .product-btn {
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
@@ -291,6 +378,7 @@ header input:focus {
   height: 160px;
   position: relative;
   background-color:rgba(240, 197, 46, 0.5);
+  margin-bottom: 36px;
 }
 .btn-bg:hover {
   background-color: #f0c52e;
@@ -308,7 +396,7 @@ header input:focus {
 
 .service-item h2,
 .info h2,
-.contacts h2 {
+.contact-info h2 {
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
   font-size: 47px;
   font-weight: 800;
@@ -318,13 +406,57 @@ header input:focus {
 }
 
 .services {
+  display: flex;
+  width: 100%;
   background-color: #e5e5e5;
+}
+.services h2 {
+  display: none;
+}
+.services-container {
+  display: flex;
+  width: 1160px;
+  margin: auto;
+}
+.services-btn {
+  width: 285px;
+  padding: 0;
+}
+.services-list {
+  width: 875px;
+  margin: auto;
+  padding: 0;
 }
 /*_____________Конец стилизации блока сервисы______________________*/
 
 /*_____________Блок Партнеры_______________*/
+.partners h2 {
+  display: none;
+}
+
+.partners-list {
+  display: flex;
+  width: 1160px;
+  margin: auto;
+  padding-left: 0;
+  padding-top: 94px;
+  padding-left: 93px;
+}
 
 /*_________Секция "О нас"_______*/
+.index-columns {
+  display: flex;
+  width: 1160px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.info {
+  width: 560px;
+}
+.contact-info {
+  width: 560px;
+}
 .info-logistics-company {
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
   font-size: 15px;
@@ -338,9 +470,29 @@ header input:focus {
 
 /*_____________Начало стилизации блока Футер______________________*/
 footer {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
   background-color: #464646
 }
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 1160px;
+  margin: auto;
+}
+.footer-left {
+  width: 367px;
+}
 
+.footer-center {
+  min-width: 423px;
+}
+
+.footer-right {
+  width: 370px;
+
+}
 address {
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
