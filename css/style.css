@@ -3,7 +3,7 @@
   font-family: 'Gilroy ExtraBold';
   src: url('../fonts/gilroyextrabold-webfont.woff2') format('woff2'),
        url('../fonts/gilroyextrabold-webfont.woff') format('woff');
-  font-weight: normal;
+  font-weight: 700;
   font-style: normal;
 
 }
@@ -24,13 +24,18 @@
   font-style: normal;
 }
 
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 html {
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   letter-spacing: 0.15px;
   margin: 0px;
   padding: 0px;
-  }
+  box-sizing: border-box;
+}
 
 a {
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
@@ -38,6 +43,7 @@ a {
   font-weight: 800;
   font-style: normal;
   font-stretch: normal;
+  vertical-align: center;
   line-height: 24px;
   letter-spacing: 3.6px;
   text-transform: uppercase;
@@ -45,21 +51,40 @@ a {
   color: #000000;
   cursor: pointer;
 }
+ul {
+  padding-left: 0;
+}
 
 li {
   list-style: none;
 }
 
+.visually-hidden {
+  display: none;
+}
 /*_____________Начало стилизации блока "Хедер и навигация"______________________*/
 header {
-  width: 1160px;
-  min-height: 300px;
-  background-color: rgba(240, 197, 46, 0.5);
   position: relative;
-  margin: auto;
+
+  display: flex;
+  width: 1200px;
+  min-height: 300px;
   margin-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+
 }
 
+.header-wrapper {
+  display: flex;
+  width: 1160px;
+  flex-direction: column;
+
+  background-color: rgba(240, 197, 46, 0.5);
+}
 .header-logo {
   position: absolute;
   display: block;
@@ -68,12 +93,12 @@ header {
 }
 
 .user-nav {
-  width: 1040px;
-  margin: auto;
   display: flex;
+  width: 1040px;
+  margin: 0 auto;
   align-items: baseline;
-  padding-top: 34px;
-  padding-bottom: 33px;
+  padding-top: 35px;
+  padding-bottom: 30px;
 }
 
 .header-user-link {
@@ -97,17 +122,20 @@ header {
 
 .search {
   width: 355px;
+  padding: 8px 0 8px 40px;
+
   font-family: 'Open Sans', 'Arial', sans-serif;
   line-height: 30px;
   font-weight: 300;
   letter-spacing: 0.2px;
   text-align: left;
   color: rgba(0, 0, 0, 0.3);
+
   border: none;
   border-bottom: 2px solid transparent;
   background-color: transparent;
   box-sizing: border-box;
-  padding: 8px 0 8px 40px;
+
 }
 
 .search:hover {
@@ -226,10 +254,29 @@ header {
   margin-right: -0.2em;
 }
 
-.catalog-item a {
-  font-family: 'Open Sans', 'Arial', sans-serif;
-  font-size: 15px;
-  font-weight: 300;
+.catalog-list {
+  display: flex;
+  width: auto;
+  justify-content: flex-start;
+  margin: 0 60px;
+  padding-left: 0;
+  padding-top: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 58px;
+}
+
+.column:last-child {
+  padding-right: 0;
+  padding-left: 20px;
+}
+.column a {
+  display: block;
+  font: inherit;
   line-height: 36px;
   letter-spacing: 0.2px;
   color: #000000;
@@ -240,23 +287,95 @@ header {
 .header-user-link a:hover,
 .menu-item a:focus,
 .menu-item a:hover,
-.catalog-item a:focus,
-.catalog-item a:hover {
+.column a:focus,
+.column a:hover {
   color: rgba(0, 0, 0, 0.6);
 }
 
 .header-user-link a:active,
 .menu-item a:active,
-.catalog-item a:active {
+.column a:active {
   color: rgba(0, 0, 0, 0.3);
 }
 
 /*_____________Конец стилизации блока "Хедер и навигация"______________________*/
 
 /*_____________Начало стилизации блока "Промо-слайдер"______________________*/
-.slide-first p:first-of-type,
-.slide-second p:first-of-type,
-.slide-third p:first-of-type  {
+h1 {
+  display: none;
+}
+
+.slider-btn {
+  display: none;
+}
+.promo-container {
+  width: 1200px;
+  min-height: 400px;
+  padding: 0 20px;
+  margin: auto;
+  /*overfolw: hidden;*/
+}
+.promo-container h2 {
+  display: none;
+}
+
+.slider-container {
+  width: 300%;
+}
+.slide-first,
+.slide-second,
+.slide-third {
+  position: relative;
+  top: -108px;
+
+  display: flex;
+  width: 1160px;
+  min-height: 400px;
+  justify-content: space-between;
+
+  float: left;
+}
+
+.column-left {
+  width: 560px;
+}
+
+.promo-monopod {
+  position: relative;
+  top: -4px;
+  right: -90px;
+}
+
+.column-right {
+  position: relative;
+  display: flex;
+  width: 560px;
+  flex-direction: column;
+}
+
+.slide-number {
+  position: absolute;
+  top: -15px;
+  right: 47px;
+
+  display: block;
+  width: auto;
+  height: auto;
+  background-color: rgba(240, 197, 46, 0.5); /*-----Временно, что бы не потерялся на белом фоне-----*/
+
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 179px;
+  font-weight: 800;
+  line-height: 179px;
+  letter-spacing: 1.8px;
+  text-align: right;
+  color: #ffffff;
+}
+
+.column-right p:first-of-type {
+  padding-top: 76px;
+  margin: 0;
+
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
   font-size: 47px;
   font-weight: 800;
@@ -265,18 +384,71 @@ header {
   color: #000000;
 }
 
-.slide-number {
-  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
-  font-size: 179px;
-  font-weight: 800;
-  line-height: 179px;
-  letter-spacing: 1.8px;
-  text-align: right;
-  color: #ffffff;
-  background-color: rgba(240, 197, 46, 0.5); /*-----Временно, что бы не потерялся на белом фоне-----*/
+.column-right p:last-of-type {
+  padding-top: 18px;
+  padding-bottom: 43px;
+  margin: 0;
+
+  line-height: 30px;
+  letter-spacing: 0.15px;
+}
+
+.device-btn::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 20%;
+  background-color: #f0c52e;
+}
+
+.device-btn {
+  position: relative;
+
+  display: inline-block;
+  margin-left: 1px;
+  width: 220px;
+  height: 40px;
+  padding: 9px 5px;
+
+  text-align: center;
+
+  background-color: transparent;
+}
+
+.device-btn:focus,
+.device-btn:hover {
+  width: 220px;
+  height: 40px;
+  color: rgba(0, 0, 0, 0.6);
+  background-color: #f0c52e;
+}
+
+.device-btn:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.slider-features {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 0;
+  padding-top: 34px;
+  margin-left: 0;
+}
+
+.slider-features li {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 78px;
 }
 
 .feature-value {
+  padding-bottom: 8px;
+
   font-family: 'Gilroy Light', 'Arial', 'sans-serif';
   font-size: 36px;
   font-weight: 300;
@@ -293,55 +465,13 @@ header {
   color: #464646;
 }
 
-.device-btn {
-  min-width: 220px;
-  min-height: 40px;
-  position: relative;
-  padding: 9px 5px;
-  background-color: transparent;
-}
-
-.device-btn::before {
-  content: "";
-  position: absolute;
-  top: 40%;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 20%;
-  background-color: #f0c52e;
-}
-
-.device-btn:focus,
-.device-btn:hover {
-  width: 220px;
-  height: 40px;
-  color: rgba(0, 0, 0, 0.6);
-  background-color: #f0c52e;
-}
-
-.device-btn:active {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.promo-container {
-  width: 1160px;
-  /*overfolw: hidden;*/
-}
-
-.slider-container {
-  width: 300%;
-}
-
-.slider-container section {
-  float: left;
-  min-height: 980px; /*Временно что бы категории не наезжали*/
-}
 
 /*_____________Конец стилизации блока "Промо-слайдер"______________________*/
 
 /*_____________Начало стилизации блока "Категории товаров"______________________*/
 .products {
+  position: relative;
+  top: -9px;
   display: flex;
   width: 1160px;
   margin: auto;
@@ -352,20 +482,21 @@ header {
 }
 
 .products-list {
-  width: 100%;
   display: flex;
   justify-content: space-between;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 .product-btn {
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.2px;
   text-decoration: none;
   text-transform: none;
+  vertical-align: top;
   color: #000000;
 }
 
@@ -378,7 +509,7 @@ header {
   height: 160px;
   position: relative;
   background-color:rgba(240, 197, 46, 0.5);
-  margin-bottom: 36px;
+  margin-bottom: 34px;
 }
 .btn-bg:hover {
   background-color: #f0c52e;
@@ -408,24 +539,124 @@ header {
 .services {
   display: flex;
   width: 100%;
+  padding-top: 53px;
   background-color: #e5e5e5;
+  background-image: linear-gradient(white 153px, transparent 153px)
+
 }
-.services h2 {
-  display: none;
-}
+
 .services-container {
   display: flex;
   width: 1160px;
   margin: auto;
 }
-.services-btn {
-  width: 285px;
+.btn-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 285px;
+  margin: 0;
   padding: 0;
+  padding-top: 80px;
+  border-right: 7px solid black;
+
 }
+.service-btn::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 20%;
+  background-color: #f0c52e;
+}
+
+.service-btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  padding: 8px 15px 8px 15px;
+  margin-bottom: 24px;
+  width: 160px;
+  z-index: 0;
+
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  font-size: 18px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 24px;
+  letter-spacing: 3.6px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.service-btn:hover {
+  background-color:  #f0c52e;
+}
+
 .services-list {
-  width: 875px;
+  display: flex;
+  justify-content: flex-start;
+  min-width: 875px;
   margin: auto;
   padding: 0;
+}
+
+.service-item {
+  min-width: 875px;
+}
+
+.service-item h2 {
+  margin: 0;
+  padding-left: 117px;
+  padding-top: 74px;
+}
+
+.services-delivery,
+.service-warranty,
+.service-credit {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 388px;
+}
+.services-delivery p,
+.services-warranty p,
+.services-credit p {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: #464646;
+}
+
+.services-delivery p {
+  display: inline-flex;
+  width: 575px;
+  margin: 0;
+  padding: 30px 0 0 117px;
+}
+.services-warranty p {
+  display: inline-flex;
+  width: 553px;
+  margin: 0;
+  padding: 30px 0 0 117px;
+}
+
+.services-credit {
+  display: inline-flex;
+  width: 542px;
+  margin: 0;
+  padding: 30px 0 0 117px;
 }
 /*_____________Конец стилизации блока сервисы______________________*/
 
@@ -436,13 +667,23 @@ header {
 
 .partners-list {
   display: flex;
+  justify-content: space-between;
   width: 1160px;
   margin: auto;
   padding-left: 0;
   padding-top: 94px;
-  padding-left: 93px;
+  padding-bottom: 87px;
 }
 
+.partners-list img {
+  filter: grayscale(100%);
+  opacity: 0.2;
+}
+
+.partners-list img:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
 /*_________Секция "О нас"_______*/
 .index-columns {
   display: flex;
@@ -457,36 +698,88 @@ header {
 .contact-info {
   width: 560px;
 }
+
+.info h2,
+.contact-info h2 {
+  margin: 0;
+  padding-top: 54px;
+  padding-bottom: 26px;
+}
+
+.info p {
+  display: inline-flex;
+  width: 485px;
+
+  line-height: 30px;
+}
+
 .info-logistics-company {
+  margin: 0;
+  padding-top: 56px;
+  padding-left: 35px;
+  padding-bottom: 49px;
+
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 800;
   line-height: 30px;
   letter-spacing: 0.15px;
   color: #000000;
 }
 
+.info-logistics-company li {
+  padding-bottom: 10px;
+}
+
+.contact-info p {
+  display: inline-flex;
+  width: 525px;
+
+  line-height: 30px;
+}
+
+.map-modal img {
+  padding-top: 24px;
+  padding-bottom: 63px;
+}
+.about,
+.write-us {
+  min-width: 260px;
+}
 /*_________Секция "Контакты"__________*/
 
 /*_____________Начало стилизации блока Футер______________________*/
 footer {
   display: flex;
   width: 100%;
+  margin-top: 82px;
   justify-content: flex-start;
   background-color: #464646
 }
 .footer-wrapper {
   display: flex;
   justify-content: space-between;
-  width: 1160px;
+  width: 1200px;
+  padding: 0 20px;
   margin: auto;
 }
 .footer-left {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
   width: 367px;
 }
-
+.footer-logo {
+  margin: 0;
+  padding: 0;
+  padding-top: 65px;
+  padding-bottom: 24px;
+}
 .footer-center {
-  min-width: 423px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  min-width: 425px;
 }
 
 .footer-right {
@@ -501,9 +794,16 @@ address {
   line-height: 30px;
   letter-spacing: normal;
   text-align: left;
+  vertical-align: top;
   color: #ffffff;
 }
 
+.footer-links-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding-top: 137px;
+}
 .footer-links-list a {
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
   font-size: 18px;
@@ -511,6 +811,7 @@ address {
   text-transform: uppercase;
   letter-spacing: 3,6px;
   text-decoration: none;
+  text-align: center;
   font-weight: 800;
   color: #ffffff;
 }
