@@ -35,7 +35,7 @@
       <nav>
         <ul class="main-menu">
           <li class="menu-item catalog">
-            <a href="catalog.html">Каталог товаров</a>
+            <a href="catalog.html" class="sub-menu-wrapper">Каталог товаров</a>
             <ul class="catalog-list sub-menu">
               <li class="catalog-column-1 column">
                 <a href="vr.html">Виртуальная реальность</a>
@@ -236,35 +236,38 @@
     <section class="services">
       <h2 class="visually-hidden">Дополнительные сервисы</h2>
       <div class="services-container">
-        <ul class="btn-list">
-          <li class="service-btn">Доставка</li>
-          <li class="service-btn">Гарантия</li>
-          <li class="service-btn">Кредит</li>
-        </ul>
-        <ul class="services-list">
-          <li class="service-item">
-            <section class="services-delivery">
+        <div class="service-slider">
+          <input type="radio" id="service-1" name="service-toggle" checked class="visually-hidden">
+          <input type="radio" id="service-2" name="service-toggle" class="visually-hidden">
+          <input type="radio" id="service-3" name="service-toggle" class="visually-hidden">
+          <div class="service-control btn-list">
+            <label class="service-radio-btn service-btn" for="service-1">Доставка</label>
+            <label class="service-radio-btn service-btn" for="service-2">Гарантия</label>
+            <label class="service-radio-btn service-btn" for="service-3">Кредит</label>
+          </div>
+
+          <div class="services-list">
+            <section class="services-delivery service-item">
               <h2>Доставка</h2>
               <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо
                 заработаем, поднимая его на ваш этаж.</p>
             </section>
-          </li>
-          <li class="service-item">
-            <section class="services-warranty">
+
+            <section class="services-warranty service-item">
               <h2>Гарантия</h2>
               <p>Если из-за возгарания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый.<br>
                 Товар, не дом, конечно же.</p>
             </section>
-          </li>
-          <li class="service-item">
-            <section class="services-credit">
+
+            <section class="services-credit service-item">
               <h2>Кредит</h2>
               <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия
                 кредита. Выгодные для нашего банка, разумеется.</p>
             </section>
-          </li>
-        </ul>
-      </div>
+
+          </div>
+        </div>
+
     </section>
     <section class="partners">
       <h2 class="visually-hidden">Наши партнеры и поставщики</h2>
@@ -295,7 +298,7 @@
       <section class="info">
         <h2>О нас</h2>
         <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
-        <p>Мы можем доставить ваш товар в самые отдаленные точки России! Device работает со многими транспортными
+        <p>Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными
           компаниями:</p>
         <ul class="info-logistics-company">
           <li>Деловые Линии</li>
@@ -327,9 +330,9 @@
         </a>
         <ul class="footer-user-link">
           <li><a href="profile.html" aria-label="Перейти в личный кабинет"></a></li>
-          <li><a href="login.html">Войти</a></li>
-          <li><a href="compare.html">Сравнить</a></li>
-          <li><a href="cart.html">Корзина</a></li>
+          <li><a href="login.html" class="profile">Войти</a></li>
+          <li><a href="compare.html" class="footer-compare">Сравнить</a></li>
+          <li><a href="cart.html" class="footer-cart">Корзина</a></li>
         </ul>
       </div>
       <div class="footer-center-block">

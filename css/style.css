@@ -79,7 +79,9 @@ header {
   margin: 40px auto 0 auto;
   padding: 0 auto;
 }
-
+.catalog-header {
+  min-height: 185px;
+}
 .header-wrapper {
   display: flex;
   width: 1160px;
@@ -92,6 +94,13 @@ header {
   position: absolute;
   display: block;
   top: -19px;
+  margin-left: 60px;
+}
+
+.catalog-header-logo {
+  position: absolute;
+  display: block;
+  top: -17px;
   margin-left: 60px;
 }
 
@@ -122,6 +131,7 @@ header {
 }
 
 .search {
+  position: relative;
   width: 355px;
   padding: 8px 0 8px 40px;
 
@@ -163,7 +173,21 @@ header {
   outline: transparent;
 }
 
+.header-logo::after {
+  content: "";
+  position: absolute;
+  top: 70px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/search.svg");
+  background-repeat: no-repeat;
+}
+.catalog-header-logo::after {
+  top: 68px
+}
 .search-btn {
+  display: none;
   font: inherit;
   font-size: 15px;
   width: 85px;
@@ -173,6 +197,12 @@ header {
   box-sizing: border-box;
   padding: 8px 18px;
 }
+
+.search:focus + .search-btn {
+  display: block;
+}
+
+
 
 .search-btn:hover {
   font: inherit;
@@ -186,6 +216,7 @@ header {
 }
 
 .search-btn:active {
+  display: block;
   font: inherit;
   font-size: 15px;
   width: 85px;
@@ -203,8 +234,19 @@ header {
   padding: 0;
   justify-content: flex-end;
 }
+.header-user-link {
+  cursor: pointer;
+}
+.header-user-link li:hover,
+.header-user-link li:focus {
+  opacity: 0.6;
+}
+.header-user-link li:active {
+  opacity: 0.3;
+}
 
 .header-user-link a {
+  position: relative;
   display: inline-flex;
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
@@ -215,6 +257,15 @@ header {
   text-transform: none;
   color: black;
 }
+
+.header-user-link a::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 13px;
+  background-repeat: no-repeat;
+}
+
 
 .header-user-link li:last-of-type {
   padding-left: 23px;
@@ -227,6 +278,26 @@ header {
   padding-left: 27px;
   margin-right: auto;
 }
+
+.login::before {
+  top: 9px;
+  left: -27px;
+  background-image: url("../img/user.svg")
+}
+
+.compare::before {
+  top: 11px;
+  left: -19px;
+  background-image: url("../img/compare.svg")
+}
+
+.cart::before {
+  top: 9px;
+  left: -22px;
+  background-image: url("../img/cart.svg")
+}
+
+
 .logout {
 
   padding-right: 83px;
@@ -241,6 +312,7 @@ header {
 
 .main-menu {
   display: flex;
+  position: relative;
   justify-content: space-between;
   width: 1040px;
   margin: auto;
@@ -248,6 +320,7 @@ header {
 }
 
 .menu-item a {
+  position: relative;
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
   font-size: 18px;
   line-height: 24px;
@@ -276,7 +349,17 @@ header {
   margin-left: auto;
   margin-right: -0.2em;
 }
-
+.sub-menu-wrapper:after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: -27px;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/plus.svg");
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
 .catalog-list {
   display: flex;
   justify-content: flex-start;
@@ -288,7 +371,7 @@ header {
 }
 .sub-menu {
   position: absolute;
-  left: 20px;
+  left: -60px;
   display: none;
 }
 .catalog:hover .sub-menu {
@@ -343,6 +426,7 @@ header {
 
 
 .promo-container {
+  position: relative;
   width: 1200px;
   min-height: 400px;
   padding: 0 20px;
@@ -351,6 +435,16 @@ header {
   top: -108px;
   overflow: hidden;
 
+}
+
+.promo-container::before {
+  content: "";
+  position: absolute;
+  top: 33px;
+  right: 480px;
+  width: 100px;
+  height: 7px;
+  background-color: #ffffff;
 }
 
 .slider-control {
@@ -681,18 +775,30 @@ header {
   width: 1200px;
   padding: 0 20px;
   margin: auto;
+  overflow: hidden;
 }
+.service-slider {
+  display: flex;
+  position: relative;
+}
+
 .btn-list {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   min-width: 285px;
+  height: 320px;   /*Костыль*/
   margin: 0;
   padding: 0;
   padding-top: 80px;
   border-right: 7px solid black;
-
+  position: relative;
+  z-index: 1;
+  background-color: #e5e5e5;
+  background-image: linear-gradient(white 100px, transparent 100px)
 }
+
 .service-btn::before {
   content: "";
   position: absolute;
@@ -735,9 +841,10 @@ header {
 .services-list {
   display: flex;
   justify-content: flex-start;
-  min-width: 875px;
+  width: 300%;
   margin: auto;
   padding: 0;
+  position: relative;
 }
 
 .service-item {
@@ -773,23 +880,93 @@ header {
 }
 
 .services-delivery p {
+  position: relative;
   display: inline-flex;
   width: 575px;
   margin: 0;
   padding: 30px 0 0 117px;
 }
+
 .services-warranty p {
+  position: relative;
   display: inline-flex;
   width: 553px;
   margin: 0;
   padding: 30px 0 0 117px;
 }
 
-.services-credit {
+.services-credit p {
+  position: relative;
   display: inline-flex;
-  width: 542px;
+  width: 548px;
   margin: 0;
   padding: 30px 0 0 117px;
+}
+
+
+.services-delivery p::after {
+  content: "";
+  position: absolute;
+  right: -234px;
+  top: -37px;
+  width: 136px;
+  height: 164px;
+
+  background-repeat: no-repeat;
+  background-image: url("../img/delivery.svg")
+}
+
+.services-warranty p::after {
+  content: "";
+  position: absolute;
+  right: -276px;
+  top: -61px;
+  width: 171px;
+  height: 194px;
+
+  background-repeat: no-repeat;
+  background-image: url("../img/warranty.svg")
+}
+
+.services-credit p::after {
+  content: "";
+  position: absolute;
+  right: -257px;
+  top: -61px;
+  width: 156px;
+  height: 186px;
+
+  background-repeat: no-repeat;
+  background-image: url("../img/credit.svg")
+}
+
+
+#service-1:checked~.service-control label[for="service-1"]::before,
+#service-2:checked~.service-control label[for="service-2"]::before,
+#service-3:checked~.service-control label[for="service-3"]::before {
+  top: 0;
+  width: 280px;
+  height: 100%;
+  background: black;
+}
+
+#service-1:checked~.service-control label[for="service-1"],
+#service-2:checked~.service-control label[for="service-2"],
+#service-3:checked~.service-control label[for="service-3"] {
+  color: #f7e184;
+}
+
+
+#service-1:checked ~ .services-list {
+  transform: translate(0);
+}
+
+#service-2:checked ~ .services-list {
+  transform: translate(-875px);
+}
+
+#service-3:checked ~ .services-list {
+  transform: translate(-1750px);
 }
 /*_____________Конец стилизации блока сервисы______________________*/
 
@@ -822,6 +999,7 @@ header {
   width: 1200px;
   margin: auto;
   padding: 0 20px;
+  margin-bottom: 82px;
   justify-content: space-between;
 }
 
@@ -834,14 +1012,24 @@ header {
 
 .info h2,
 .contact-info h2 {
+  position: relative;
   margin: 0;
   padding-top: 54px;
   padding-bottom: 26px;
 }
-
+.info h2::before,
+.contact-info h2::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 7px;
+  top: 0px;
+  background-color: #000000;
+}
 .info p {
   display: inline-flex;
-  width: 485px;
+  width: 475px;
+  letter-spacing: normal;
 
   line-height: 30px;
 }
@@ -886,7 +1074,6 @@ header {
 footer {
   display: flex;
   width: 100%;
-  margin-top: 82px;
   justify-content: flex-start;
   background-color: #464646
 }
@@ -939,6 +1126,7 @@ footer {
   padding-right: 0;
 }
 .footer-user-link a {
+  position: relative;
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300;
@@ -949,6 +1137,33 @@ footer {
   text-transform: none;
   color: rgba(255, 255, 255, 0.7);
 }
+
+.footer-user-link a::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 13px;
+  background-repeat: no-repeat;
+}
+
+.profile::before {
+  top: 5px;
+  left: -27px;
+  background-image: url("../img/user-footer.svg")
+}
+
+.footer-compare::before {
+  top: 7px;
+  left: -19px;
+  background-image: url("../img/compare-footer.svg")
+}
+
+.footer-cart::before {
+  top: 5px;
+  left: -22px;
+  background-image: url("../img/cart-footer.svg")
+}
+
 
 .footer-user-link a:hover {
   font-family: 'Open Sans', 'Arial', sans-serif;
@@ -1042,6 +1257,7 @@ address {
 }
 
 .footer-social {
+  position: relative;
   display: flex;
   margin: 0;
   width: 140px;
@@ -1049,10 +1265,21 @@ address {
   padding-top: 63px;
   padding-left: 510px;
   padding-right: 483px;
-  padding-bottom: 61px;
+  padding-bottom: 68px;
   justify-content: space-between;
   box-sizing: content-box;
 }
+
+.footer-social::before {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 7px;
+  top: 77px;
+  left: 0;
+  background-color: #f0c52e;
+}
+
 .footer-social li {
   opacity: 0.3;
 }
@@ -1084,18 +1311,33 @@ address {
 /*_____________Конец стилизации блока Футер______________________*/
 /*_____________Начало блока Модальное окно_______________________*/
 
+/*.modal {
+  position: fixed;
+
+  color: #000000;
+
+  background-color: #ffffff;
+  z-index: 10;
+
+}*/
 .modal-letter {
+  /*top: 50px;
+  left: 50%;*/
   display: flex;
   justify-content: space-between;
+
   width: 960px;
   min-height: 553px;
+  box-shadow: 0 10px 20px 0 rgba(0,4,6,.2);
 
   padding: 0;
-  margin: 0 auto;
+  /*margin-left: -480px;*/
 
   box-sizing: border-box;
 }
-
+.modal-letter form {
+  margin: 0 auto;
+}
 .close-btn {
   margin-left: 883px;
   margin-top: 22px;
@@ -1251,7 +1493,9 @@ address {
   margin: 0 auto;
 }
 .catalog-nav h1 {
-  padding-left: 61px;
+  padding-left: 60px;
+  padding-top: 8px;
+  margin-bottom: 0;
 
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
   font-size: 47px;
@@ -1266,7 +1510,9 @@ address {
 .breadcrumbs {
   display: flex;
   padding: 0;
+  padding-top: 23px;
   padding-left: 60px;
+  padding-bottom: 46px;
   margin: 0;
   box-sizing: content-box;
 }
@@ -1276,7 +1522,7 @@ address {
 
 .breadcrumbs li:last-child {
   padding-right: 0px;
-  padding-bottom: 50px;
+
 }
 .breadcrumbs a {
   font-family: 'Open Sans', 'Arial', sans-serif;
@@ -1310,7 +1556,7 @@ address {
   display: flex;
   flex-direction: flex-start;
   width: 100%;
-  background-image: linear-gradient(to right,#dcdcdc 20%,#ebebeb 20%);
+  background-image: linear-gradient(to right,#dcdcdc 20%,#eeeeee 20%);
 }
 
 .filter-header {
@@ -1425,7 +1671,7 @@ address {
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  background-image: linear-gradient(to right,#ebebeb 0,#ebebeb 28%,#ffffff 28%,#ffffff 100%)
+  background-image: linear-gradient(to right,#eeeeee 0,#eeeeee 28%,#ffffff 28%,#ffffff 100%)
 }
 /*______________________________________Колонка Фильров_________________________*/
 .center-wrapper {
@@ -1439,12 +1685,17 @@ address {
   padding-left: 60px;
   width: 330px;
   height: 100%;
-  background-color: #ebebeb;
+  background-color: #eeeeee;
   z-index: -3;
 }
 .item-filtres h3 {
+  display: inline-flex;
+  width: 200px;
+  border-top: 2px solid black;
   padding: 0;
+  padding-top: 12px;
   margin: 0;
+  margin-top: 40px;
 
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
   font-size: 18px;
@@ -1458,7 +1709,8 @@ address {
   color: #000000;
 }
 
-.item-color li {
+.item-color li,
+.item-bluetooth li {
   position: relative;
 }
 .item-color label,
@@ -1496,6 +1748,11 @@ address {
   cursor: pointer;
 }
 
+.filter-btn:hover,
+.filter-btn:focus,
+.filter-btn:active {
+  width: 200px;
+}
 .check-box {
   -webkit-appearance: none;
   position: absolute;
@@ -1505,24 +1762,50 @@ address {
   bottom: 8px;
   width: 27px;
   height: 23px;
-  background-image: url(../img/checkbox-off.svg);
+  background-image: url("../img/checkbox-off.svg");
   background-repeat: no-repeat;
   z-index: 1;
 }
 
 .check-box:checked+.check {
-  background-image: url(../img/checkbox-on.svg);
+  background-image: url("../img/checkbox-on.svg");
 }
 .check-box:hover:checked+.check {
-  background-image: url(../img/checkbox-on.svg);
+  background-image: url("../img/checkbox-on.svg");
   opacity: 0.6;
 }
 
 .check-box:hover+.check {
-  background-image: url(../img/checkbox-off.svg);
+  background-image: url("../img/checkbox-off.svg");
   opacity: 0.6;
 }
 
+.radio {
+  -webkit-appearance: none;
+  position: absolute;
+}
+.radio-check {
+  position: absolute;
+  bottom: 8px;
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/radio-off.svg");
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.radio:checked+.radio-check {
+  background-image: url("../img/radio-on.svg");
+}
+.radio:hover:checked+.radio-check {
+  background-image: url("../img/radio-on.svg");
+  opacity: 0.6;
+}
+
+.radio:hover+.radio-check {
+  background-image: url("../img/radio-off.svg");
+  opacity: 0.6;
+}
 .right-column {
   width: 100%;
   background-color: white;
@@ -1625,6 +1908,7 @@ address {
   background-color:white;
   padding-top: 10px;
   padding-left: 70px;
+  margin-bottom: 75px;
   width: 100%;
 }
 .nav-list {
@@ -1698,5 +1982,6 @@ address {
   width: 960px;
   margin: 0 auto;
   min-height: 559px;
-  background-image: url("../img/map-modal.jpg")
+  background-image: url("../img/map-modal.jpg");
+  box-shadow: 0 10px 20px 0 rgba(0,4,6,.2);
 }
