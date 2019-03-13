@@ -1366,12 +1366,29 @@ address {
 
   box-sizing: border-box;
 }
+
+.modal-map {
+
+  top: 50px;
+  left: 50%;
+
+  width: 960px;
+  margin: 0 auto;
+  margin-left: -480px;
+
+  height: 559px;
+
+  box-shadow: 0 10px 20px 0 rgba(0,4,6,.2);
+}
+
 .modal-letter form {
+  padding-top: 95px;
   margin: 0 auto;
 }
 .close-btn {
-  margin-left: 883px;
-  margin-top: 22px;
+  position: absolute;
+  left: 883px;
+  top: 22px;
   width: 55px;
   height: 55px;
   border: none;
@@ -2027,10 +2044,4 @@ address {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.modal-map {
-  width: 960px;
-  margin: 0 auto;
-  min-height: 559px;
-  background-image: url("../img/map-modal.jpg");
-  box-shadow: 0 10px 20px 0 rgba(0,4,6,.2);
-}
+

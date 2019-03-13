@@ -386,7 +386,7 @@
 
     <h2 class="visually-hidden">Напишите нам</h2>
     <form action="https://echo.htmlacademy.ru" method="post" class="form-letter">
-      <button type="button" aria-label="Закрыть форму" class="close-btn"></button>
+      <button type="button" aria-label="Закрыть форму" class="letter-close close-btn"></button>
       <div class="column-wraper">
         <div class="modal-left-column">
           <label for="contact-data">Ваше имя:</label>
@@ -408,13 +408,16 @@
   </section>
   <section class="modal modal-map">
     <h2 class="visually-hidden">Как до нас добраться</h2>
-    <button type="button" aria-label="Закрыть форму" class="close-btn"></button>
-    <!--Или ссылку-->
+    <button type="button" aria-label="Закрыть форму" class="map-close close-btn"></button>
+    <iframe src="https://yandex.ru/map-widget/v1/-/CCeAZFlL" width="960" height="559" frameborder="0" allowfullscreen="true"></iframe>
   </section>
   <script>
     var link_write = document.querySelector(".write-us");
+    var link_map = document.querySelector(".contacts-map");
     var letter_popup = document.querySelector(".modal-letter");
-    var letter_close = document.querySelector(".close-btn");
+    var map_popup =document.querySelector(".modal-map");
+    var letter_close = document.querySelector(".letter-close");
+    var map_close = document.querySelector(".map-close");
 
     var form = document.querySelector(".form-letter");
     var username = document.querySelector("[name=contact-data]");
@@ -452,11 +455,21 @@
       }
     });
 
+    link_map.addEventListener("click", function(evt) {
+      evt.preventDefault();
+      map_popup.classList.add("modal-show");
+    })
+
     letter_close.addEventListener("click", function(evt) {
       evt.preventDefault();
       letter_popup.classList.remove("modal-show");
       letter_popup.offsetWidth = letter_popup.offsetWidth;
       letter_popup.classList.remove("modal-error");
+    });
+
+    map_close.addEventListener("click", function(evt) {
+      evt.preventDefault();
+      map_popup.classList.remove("modal-show");
     });
 
     form.addEventListener("submit", function(evt) {
@@ -478,6 +491,9 @@
       if (letter_popup.classList.contains("modal-show")) {
         letter_popup.classList.remove("modal-show");
         letter_popup.classList.remove("modal-error");
+      }
+      if (map_popup.classList.contains("modal-show")) {
+        map_popup.classList.remove("modal-show");
       }
     }
   });
