@@ -62,16 +62,16 @@
     <section class="catalog-nav">
       <h1>Моноподы для селфи</h1>
       <ul class="breadcrumbs">
-        <li>
+        <li class="crumb-item">
           <a href="index.html">Главная</a>
           <!--Стрелки вбок через псевдоэлемет и CSS-->
         </li>
-        <li>
+        <li class="crumb-item">
           <a href="#">Каталог товаров</a>
           <!--Стрелки вбок через псевдоэлемет b CSS-->
         </li>
         <li>
-          <a class="current" aria-label="Текущая страница:">Моноподы для селфи</a>
+          <a class="crumb-current" aria-label="Текущая страница:">Моноподы для селфи</a>
         </li>
       </ul>
     </section>
@@ -83,14 +83,14 @@
         <div class="sorting-header">
           <h2>Сортировка:</h2>
           <ul class="sorting-list">
-            <li class="sorting-type current"><a href="#">По цене</a></li>
+            <li class="sorting-type current-type"><a href="#">По цене</a></li>
             <li class="sorting-type"><a href="#">По типу</a></li>
             <li class="sorting-type"><a href="#">По популярнасти</a></li>
           </ul>
           <ul class="sorting-direction">
             <li class="sorting-type up"><a href="#" aria-label="По возрастанию"></a></li>
             <!--сменить стрелку на псевдоэлемент CSS-->
-            <li class="sorting-type down current"><a href="#" aria-label="По убыванию"></a></li>
+            <li class="sorting-type down current-direction"><a href="#" aria-label="По убыванию"></a></li>
             <!--сменить стрелку на псевдоэлемент CSS-->
           </ul>
         </div>
@@ -103,7 +103,7 @@
             <form action="ehco.htmlacademy.ru" method="GET">
 
               <h3>Стоимость</h3>
-              <input type="range" name="" id="" min="0" max="9000">
+              <input type="range" min="0" max="9000">
               <h3>Цвет</h3>
               <ul class="item-color">
                 <li>
@@ -140,7 +140,7 @@
                   <label for="radio-yes">Есть</label>
                 </li>
                 <li>
-                  <input type="radio" name="bt" id="radio-no" value="no"  class="radio">
+                  <input type="radio" name="bt" id="radio-no" value="no" class="radio">
                   <span class="radio-check"></span>
                   <label for="radio-no">Нет</label>
                 </li>
@@ -153,40 +153,56 @@
         <div class="right-column">
           <section class="found-item" aria-label="Результаты поиска">
             <article class="item-card">
-              <img src="img/monopod-starter.jpg" alt="Фотография любительской селфи-палки">
-              <a href="monopod-starter.html">
-                <h3>Любительская селфи-палка</h3>
-              </a>
-              <span class=item-card-price>500 руб.</span>
-              <a href="cart.html" class="device-btn item-card-btn">В корзину</a>
-              <a href="compare.html" class="to-compare">Добавить к сравнению</a>
+              <img src="img/monopod-starter.jpg" alt="Фотография любительской селфи-палки" class="item-img">
+              <div class="hover-links">
+                <a href="cart.html" class="device-btn item-card-btn">В корзину</a>
+                <a href="compare.html" class="to-compare">Добавить к сравнению</a>
+              </div>
+              <div class="item-info">
+                <a href="monopod-starter.html">
+                  <h3>Любительская селфи-палка</h3>
+                </a>
+                <span class=item-card-price>500 руб.</span>
+              </div>
             </article>
             <article class="item-card">
-              <img src="img/monopod-pro.jpg" alt="Фотография профессиональной селфи-палки">
-              <a href="monopod-pro.html">
-                <h3>Профессиональная селфи-палка</h3>
-              </a>
-              <span class=item-card-price>1500 руб.</span>
-              <a href="cart.html" class="device-btn item-card-btn">В корзину</a>
-              <a href="compare.html" class="to-compare">Добавить к сравнению</a>
+              <img src="img/monopod-pro.jpg" alt="Фотография профессиональной селфи-палки" class="item-img">
+              <div class="hover-links">
+                <a href="cart.html" class="device-btn item-card-btn">В корзину</a>
+                <a href="compare.html" class="to-compare">Добавить к сравнению</a>
+              </div>
+              <div class="item-info">
+                <a href="monopod-pro.html">
+                  <h3>Профессиональная<br> селфи-палка</h3>
+                </a>
+                <span class=item-card-price>1 500 руб.</span>
+              </div>
             </article>
             <article class="item-card">
-              <img src="img/monopod-waterproof.jpg" alt="Фотография непотопляемой селфи-палки">
-              <a href="monopod-waterproof.html">
-                <h3>Непотопляемая селфи-палка</h3>
-              </a>
-              <span class=item-card-price>2 500 руб.</span>
-              <a href="cart.html" class="device-btn item-card-btn">В корзину</a>
-              <a href="compare.html" class="to-compare">Добавить к сравнению</a>
+              <img src="img/monopod-waterproof.jpg" alt="Фотография непотопляемой селфи-палки" class="item-img">
+              <div class="hover-links">
+                <a href="cart.html" class="device-btn item-card-btn">В корзину</a>
+                <a href="compare.html" class="to-compare">Добавить к сравнению</a>
+              </div>
+              <div class="item-info">
+                <a href="monopod-waterproof.html">
+                  <h3>Непотопляемая селфи-палка</h3>
+                </a>
+                <span class=item-card-price>2 500 руб.</span>
+              </div>
             </article>
-            <article class="item-card">
-              <img src="img/monopod-followme.jpg" alt="Фотография селфи палки-Следуй за мной">
-              <a href="monopod-followme.html">
-                <h3>Селфи-палка "Следуй за мной"</h3>
-              </a>
-              <span class=item-card-price>4 900 руб.</span>
-              <a href="cart.html" class="device-btn item-card-btn">В корзину</a>
-              <a href="compare.html" class="to-compare">Добавить к сравнению</a>
+            <article class="item-card new">
+              <img src="img/monopod-followme.jpg" alt="Фотография селфи палки-Следуй за мной" class="item-img">
+              <div class="hover-links">
+                <a href="cart.html" class="device-btn item-card-btn">В корзину</a>
+                <a href="compare.html" class="to-compare">Добавить к сравнению</a>
+              </div>
+              <div class="item-info">
+                <a href="monopod-followme.html">
+                  <h3>Селфи-палка<br> "Следуй за мной"</h3>
+                </a>
+                <span class=item-card-price>4 900 руб.</span>
+              </div>
             </article>
           </section>
           <div class="nav-wrapper">

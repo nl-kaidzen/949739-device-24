@@ -122,8 +122,6 @@ header {
   padding-bottom: 30px;
 }
 
-
-
 .search-form {
   display: flex;
   min-width: 440px;
@@ -258,6 +256,7 @@ header {
   color: black;
 }
 
+
 .header-user-link a::before {
   content: "";
   position: absolute;
@@ -298,10 +297,11 @@ header {
 }
 
 
-.logout {
-
+.logout a {
+  color: rgba(0, 0, 0, 0.3);
   padding-right: 83px;
 }
+
 /*.compare {
   margin-left: 205px;
   margin-right: 33px;
@@ -720,7 +720,7 @@ header {
 
 .products-item:nth-child(2) svg {
   position: absolute;
-  top: 41px;
+  top: 43px;
   left: 38px;
 }
 
@@ -1049,7 +1049,19 @@ header {
 }
 
 .info-logistics-company li {
+  position: relative;
   padding-bottom: 10px;
+}
+
+.info-logistics-company li::before {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: -34px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #e5e5e5;
+  border-radius: 50%;
 }
 
 .contact-info p {
@@ -1059,9 +1071,10 @@ header {
   line-height: 30px;
 }
 
-.map-modal img {
-  padding-top: 24px;
-  padding-bottom: 63px;
+.map-modal {
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 63px;
 }
 .about,
 .write-us {
@@ -1451,7 +1464,7 @@ address {
 }
 
 .submit-letter {
-  margin-left: 90px;
+  margin-left: 100px;
   width: 200px;
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
   font-size: 18px;
@@ -1583,12 +1596,28 @@ address {
   box-sizing: content-box;
 }
 .breadcrumbs li {
+  position: relative;
   padding-right: 39px;
 }
 
 .breadcrumbs li:last-child {
   padding-right: 0px;
+}
 
+.crumb-current {
+  cursor: default;
+}
+
+.crumb-item::after{
+  content: "";
+  width: 5px;
+  height: 8px;
+
+  position: absolute;
+  background-image: url("../img/nav-arrow.svg");
+  background-repeat: no-repeat;
+  top: 9px;
+  right: 20px;
 }
 .breadcrumbs a {
   font-family: 'Open Sans', 'Arial', sans-serif;
@@ -1603,13 +1632,14 @@ address {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.breadcrumbs a:hover {
+.crumb-item a:hover {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.breadcrumbs a:active {
+.crumb-item a:active {
   color: rgba(0, 0, 0, 0.1);
 }
+
 
 .centring {
   display: flex;
@@ -1693,6 +1723,11 @@ address {
 .sorting-list a:active {
   color: rgba(0, 0, 0, 1);
 }
+
+.current-type a {
+  color: #000000;
+}
+
 .sorting-direction {
   display: flex;
   width: 41px;
@@ -1739,6 +1774,11 @@ address {
   width: 100%;
   background-image: linear-gradient(to right,#eeeeee 0,#eeeeee 28%,#ffffff 28%,#ffffff 100%)
 }
+
+.current-direction {
+  opacity: 1;
+}
+
 /*______________________________________Колонка Фильров_________________________*/
 .center-wrapper {
   display: flex;
@@ -1759,9 +1799,9 @@ address {
   width: 200px;
   border-top: 2px solid black;
   padding: 0;
-  padding-top: 12px;
+  padding-top: 10px;
   margin: 0;
-  margin-top: 40px;
+  margin-top: 69px;
 
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
   font-size: 18px;
@@ -1900,21 +1940,71 @@ address {
   padding-left: 20px;
   box-sizing: border-box;
 }
-.item-card img:hover {
-  background-color: #eeeeee;
-  opacity: 0.7;
+
+.new::before {
+  content: "new";
+  font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
+  position: absolute;
+  top: 47px;
+  right: 27px;
+  z-index: 3;
+  width: 60px;
+  height: 60px;
+  padding: 18px 12px;
+  font-size: 14px;
+  letter-spacing: .05em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.2);
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 50%;
 }
+
+.hover-links {
+  display: none;
+
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+
+  flex-direction: column;
+  width: 360px;
+  height: 380px;
+
+  padding: 0;
+  margin: 0;
+
+  background-color: rgba(238, 238, 238, 0.7);
+
+  z-index: 10;
+}
+
+.item-img:hover+.hover-links {
+  display: flex;
+}
+
 .item-card-btn {
   position: absolute;
-  top: 180px;
-  left: 80px;
-  z-index: 1;
+  top: 172px;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+  display: block;
+  opacity: 1;
+  z-index: 15;
+}
+
+.item-card-btn:hover {
+  width: 200px;
 }
 .to-compare {
   position: absolute;
-  top: 220px;
-  left: 128px;
-  z-index: 1;
+  top: 227px;
+  left: 50%;
+  width: 146px;
+  margin-left: -73px;
 
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 13px;
@@ -1938,9 +2028,8 @@ address {
 
 .item-card h3 {
   display: inline-flex;
-  width: 252px;
-  padding-top: 12px;
-  padding-bottom: 7px;
+  width: 260px;
+
 
   font-family: 'Gilroy ExtraBold', 'Arial', 'sans-serif';
   font-size: 18px;
@@ -1955,7 +2044,7 @@ address {
 }
 
 .item-card-price {
-  width: 75px;
+  width: 80px;
   height: 14px;
   font-family: 'Gilroy Light', 'Arial', 'sans-serif';
   font-size: 16px;
@@ -1969,6 +2058,16 @@ address {
   color: #464646;
 }
 
+.item-info {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-content: center;
+  align-items: baseline;
+
+  padding-top: 12px;
+  padding-bottom: 7px;
+}
 /*_________________________Навигация по результатам поиска____________________________________*/
 .nav-wrapper {
   background-color:white;
