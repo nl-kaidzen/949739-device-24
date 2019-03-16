@@ -20,7 +20,7 @@
       </a>
 
       <div class="user-nav">
-        <form action="echo.htmlacademy.ru" method="get" class="search-form">
+        <form action="https://echo.htmlacademy.ru" method="get" class="search-form">
           <input type="search" class="search" placeholder="Поиск по сайту">
           <button type="submit" class="search-btn">Найти</button>
         </form>
@@ -310,8 +310,7 @@
         <h2>Контакты</h2>
         <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки.
           Всякое бывает.</p>
-        <a href="#" class="map-modal">
-          <!--Добавить ссылку на модальное окно-->
+        <a href="map.html" class="map-modal">
           <img src="img/map.jpg" alt="Карта с адресом пункта вывоза по адресу г. Москва, ул. Строителей, 15" class="contacts-map" width="560" height="222">
         </a>
         <a href="write-us.html" class="write-us device-btn">Напишите нам</a>
@@ -462,8 +461,8 @@
     letter_close.addEventListener("click", function(evt) {
       evt.preventDefault();
       letter_popup.classList.remove("modal-show");
-      letter_popup.offsetWidth = letter_popup.offsetWidth;
       letter_popup.classList.remove("modal-error");
+
     });
 
     map_close.addEventListener("click", function(evt) {
@@ -474,8 +473,9 @@
     form.addEventListener("submit", function(evt) {
       if (!username.value || !e_mail.value) {
         evt.preventDefault();
+        letter_popup.classList.remove("modal-error");
+        letter_popup.offsetWidth = letter_popup.offsetWidth;
         letter_popup.classList.add("modal-error");
-        console.log("Нужно заполнить поля 1 и 2");
       } else {
         if (isStorageSupport) {
         localStorage.setItem("username", username.value);
