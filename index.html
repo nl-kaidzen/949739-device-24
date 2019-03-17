@@ -32,7 +32,7 @@
       <nav>
         <ul class="main-menu">
           <li class="menu-item catalog">
-            <a href="catalog.html" class="sub-menu-wrapper">Каталог товаров</a>
+            <a href="catalog.html" class="sub-menu-wrapper btn">Каталог товаров</a>
             <ul class="catalog-list sub-menu">
               <li class="catalog-column-1 column">
                 <a href="vr.html">Виртуальная реальность</a>
@@ -48,9 +48,9 @@
               </li>
             </ul>
           </li>
-          <li class="menu-item delivery"><a href="delivery.html">Доставка</a></li>
-          <li class="menu-item warranty"><a href="warranty.html">Гарантия</a></li>
-          <li class="menu-item contacts"><a href="contacts.html">Контакты</a></li>
+          <li class="menu-item delivery"><a href="delivery.html" class="btn">Доставка</a></li>
+          <li class="menu-item warranty"><a href="warranty.html" class="btn">Гарантия</a></li>
+          <li class="menu-item contacts"><a href="contacts.html" class="btn">Контакты</a></li>
         </ul>
       </nav>
     </div>
@@ -71,6 +71,7 @@
 
         <div class="slider-container">
           <section class="slide-first">
+            <h3 class="visually-hidden">Монопод длиной 8,5 метров</h3>
             <div class="column-left">
               <img src="img/promo-monopod.png" class="promo-monopod" alt="Монопод длиной 8.5 метров" height="486" width="384">
             </div>
@@ -81,8 +82,8 @@
               </p>
               <p>Самая длинная палка для селфи доступна в нашем магазине.<br>
                 Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
-              <a href="promo-monopod.html" class="device-btn">Подробнее</a>
-              <ul class="slider-features" aria-label="Преимущества товара:">
+              <a href="promo-monopod.html" class="device-btn btn">Подробнее</a>
+              <ul class="slider-features">
                 <li>
                   <span class="feature-value">8,5 м</span>
                   <span class="feature-label">Длина палки</span>
@@ -98,6 +99,7 @@
             </div>
           </section>
           <section class="slide-second">
+            <h3 class="visually-hidden">Смарт браслет</h3>
             <div class="column-left">
               <img src="img/promo-smartband.png" class="promo-band" alt="Смарт браслет" height="485" width="345">
             </div>
@@ -108,7 +110,7 @@
               </p>
               <p>Мотивирующие фитнесc-браслеты помогут найти в себе силы<br>
                 не пропускать занятия и соблюдать диету.</p>
-              <a href="promo-fitness.html" class="device-btn">Подробнее</a>
+              <a href="promo-fitness.html" class="device-btn btn">Подробнее</a>
               <ul class="slider-features">
                 <li>
                   <span class="feature-value">48 часов</span>
@@ -118,6 +120,7 @@
             </div>
           </section>
           <section class="slide-third">
+            <h3 class="visually-hidden">Квадракоптер с мощным лазером</h3>
             <div class="column-left">
               <img src="img/promo-drone.png" class="promo-drone" alt="Квадрокоптер" height="334" width="526">
             </div>
@@ -128,7 +131,7 @@
               </p>
               <p>Этот обычный, на первый взгляд, квадрокоптер оснащен<br>
                 мощным лазером, замаскированным под стандартную камеру..</p>
-              <a href="promo-drone.html" class="device-btn">Подробнее</a>
+              <a href="promo-drone.html" class="device-btn btn">Подробнее</a>
               <ul class="slider-features">
                 <li>
                   <span class="feature-value">800 м</span>
@@ -239,9 +242,9 @@
           <input type="radio" id="service-2" name="service-toggle" class="visually-hidden">
           <input type="radio" id="service-3" name="service-toggle" class="visually-hidden">
           <div class="service-control btn-list">
-            <label class="service-radio-btn service-btn" for="service-1">Доставка</label>
-            <label class="service-radio-btn service-btn" for="service-2">Гарантия</label>
-            <label class="service-radio-btn service-btn" for="service-3">Кредит</label>
+            <label class="service-radio-btn service-btn btn" for="service-1">Доставка</label>
+            <label class="service-radio-btn service-btn btn" for="service-2">Гарантия</label>
+            <label class="service-radio-btn service-btn btn" for="service-3">Кредит</label>
           </div>
 
           <div class="services-list">
@@ -302,7 +305,7 @@
           <li>Автотрейдинг</li>
           <li>ЖелДорЭкспедиция</li>
         </ul>
-        <a href="about.html" class="about device-btn">Подробнее о нас</a>
+        <a href="about.html" class="about device-btn btn">Подробнее о нас</a>
       </section>
       <section class="contact-info">
         <h2>Контакты</h2>
@@ -312,7 +315,7 @@
           <img src="img/map.jpg" alt="Карта с адресом пункта вывоза по адресу г. Москва, ул. Строителей, 15" class="contacts-map"
             width="560" height="222">
         </a>
-        <a href="write-us.html" class="write-us device-btn">Напишите нам</a>
+        <a href="write-us.html" class="write-us device-btn btn">Напишите нам</a>
       </section>
     </div>
   </main>
@@ -406,7 +409,7 @@
   <section class="modal modal-map">
     <h2 class="visually-hidden">Как до нас добраться</h2>
     <button type="button" aria-label="Закрыть форму" class="map-close close-btn"></button>
-    <iframe src="https://yandex.ru/map-widget/v1/-/CCeAZFlL" width="960" height="559" frameborder="0" allowfullscreen="true"></iframe>
+    <iframe src="https://yandex.ru/map-widget/v1/-/CCeAZFlL" width="960" height="559"></iframe>
   </section>
   <script>
     var link_write = document.querySelector(".write-us");

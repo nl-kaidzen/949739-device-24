@@ -62,28 +62,14 @@ html {
 }
 
 a {
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 24px;
-  font-family: "Gilroy ExtraBold", "Arial", "sans-serif";
-  vertical-align: center;
-  color: #000000;
-  text-transform: uppercase;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 3.6px;
+  text-decoration: none;
 
   cursor: pointer;
-
-  text-decoration-line: none;
 }
 
-ul {
-  padding-left: 0;
-}
-
-li {
-  list-style: none;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .visually-hidden {
@@ -98,6 +84,20 @@ li {
 
   clip: rect(1px, 1px, 1px, 1px);
 }
+/*___Общие правила___*/
+
+.btn {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.33;
+  font-family: "Gilroy ExtraBold", "Arial", "sans-serif";
+  text-align: center;
+  color: rgba(0, 0, 0, 1);
+  text-transform: uppercase;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 3.6px;
+}
 
 /*_____________Начало стилизации блока "Хедер и навигация"______________________*/
 header {
@@ -107,7 +107,7 @@ header {
   width: 1200px;
   min-height: 299px;
   margin: 40px auto 0 auto;
-  padding: 0 auto;
+  padding: 0;
 }
 
 .catalog-header {
@@ -281,9 +281,9 @@ header {
   width: 500px;
   margin: 0;
   padding: 0;
-}
 
-.header-user-link {
+  list-style: none;
+
   cursor: pointer;
 }
 
@@ -363,14 +363,6 @@ header {
   color: rgba(0, 0, 0, 0.3);
 }
 
-/*.compare {
-  margin-left: 205px;
-  margin-right: 33px;
-}
-.cart {
-  margin-right: 0;
-}*/
-
 .main-menu {
   position: relative;
 
@@ -379,19 +371,14 @@ header {
   width: 1040px;
   margin: auto;
   padding: 0;
+
+  list-style: none;
 }
 
 .menu-item a {
   position: relative;
 
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 24px;
-  font-family: "Gilroy ExtraBold", "Arial", "sans-serif";
-  color: black;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 3, 6px;
+  text-align: left;
 }
 
 .catalog {
@@ -434,6 +421,9 @@ header {
   min-height: 163px;
   margin: 0;
   padding-top: 20px;
+  padding-left: 0;
+
+  list-style: none;
 
   background-color: #f7e296;
 }
@@ -443,6 +433,9 @@ header {
   left: -60px;
 
   display: none;
+  padding-left: 0;
+
+  list-style: none;
 }
 
 .catalog:hover .sub-menu {
@@ -686,13 +679,13 @@ header {
 .device-btn {
   position: relative;
 
-  display: inline-block;
+  display: block;
   width: 220px;
   height: 40px;
-  margin-left: 1px;
   padding: 9px 5px;
 
   text-align: center;
+  word-wrap: normal;
 
   background-color: transparent;
 }
@@ -718,6 +711,8 @@ header {
   margin-left: 0;
   padding-top: 34px;
   padding-left: 0;
+
+  list-style: none;
 }
 
 .slider-features li {
@@ -768,6 +763,8 @@ header {
   width: 100%;
   margin: 0;
   padding: 0;
+
+  list-style: none;
 }
 
 .product-btn {
@@ -922,18 +919,7 @@ header {
   justify-content: center;
   width: 160px;
   margin-bottom: 24px;
-  padding: 8px 15px 8px 15px;
-
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 24px;
-  font-family: "Gilroy ExtraBold", "Arial", "sans-serif";
-  text-align: center;
-  color: #000000;
-  text-transform: uppercase;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 3.6px;
+  padding: 9px 15px 8px 17px;
 
   background-color: transparent;
   cursor: pointer;
@@ -1110,8 +1096,10 @@ header {
   margin: auto;
   padding-top: 94px;
   padding-right: 20px;
-  padding-bottom: 87px;
+  padding-bottom: 90px;
   padding-left: 20px;
+
+  list-style: none;
 }
 
 .partners-list img {
@@ -1184,6 +1172,7 @@ header {
   padding-bottom: 49px;
   padding-left: 35px;
 
+  list-style: none;
   font-weight: 800;
   font-size: 16px;
   line-height: 30px;
@@ -1221,7 +1210,10 @@ header {
 .map-modal {
   display: block;
   margin-top: 24px;
-  margin-bottom: 63px;
+  margin-bottom: 69px;
+
+  font-size: 0;
+  line-height: 0;
 }
 
 .about,
@@ -1279,6 +1271,9 @@ footer {
   min-width: 476px;
   margin: 0;
   padding-top: 63px;
+  padding-left: 0;
+
+  list-style: none;
 }
 
 .footer-user-link li {
@@ -1287,7 +1282,7 @@ footer {
 
 .footer-user-link li:first-child {
   margin-left: auto;
-  padding-right: 20px;
+  padding-right: 19px;
   padding-left: 20px;
 }
 
@@ -1390,6 +1385,9 @@ address {
   width: 427px;
   margin: 0;
   padding-top: 12px;
+  padding-left: 0;
+
+  list-style: none;
 }
 
 .footer-links-list a {
@@ -1452,6 +1450,8 @@ address {
   padding-right: 483px;
   padding-bottom: 68px;
   padding-left: 510px;
+
+  list-style: none;
 }
 
 .footer-social::before {
@@ -1783,6 +1783,8 @@ address {
   padding-top: 24px;
   padding-bottom: 46px;
   padding-left: 60px;
+
+  list-style: none;
 }
 
 .breadcrumbs li {
@@ -1857,7 +1859,6 @@ address {
 
 .content-header {
   display: flex;
-  flex-direction: flex-start;
   width: 100%;
 
   background-image: linear-gradient(to right, #dcdcdc 20%, #eeeeee 20%);
@@ -1882,7 +1883,7 @@ address {
 .filter-header h2,
 .sorting-header h2 {
   margin: 0;
-  padding-top: 24px;
+  padding-top: 23px;
 
   font-weight: 800;
   font-size: 16px;
@@ -1891,8 +1892,6 @@ address {
   text-align: left;
   color: #000000;
   text-transform: uppercase;
-  font-style: normal;
-  font-stretch: normal;
   letter-spacing: 3.2px;
 }
 
@@ -1906,15 +1905,26 @@ address {
 
 .sorting-list {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   box-sizing: content-box;
-  width: 288px;
+  min-width: 297px;
   margin: 0;
   padding: 0;
   padding-left: 55px;
+
+  list-style: none;
+}
+.sorting-list li {
+  box-sizing: content-box;
+  padding-top: 26px;
+  padding-right: 29px;
 }
 
+.sorting-list li:nth-of-type(2) {
+  box-sizing: content-box;
+  padding-top: 26px;
+  padding-right: 32px;
+}
 .sorting-list a {
   font-weight: normal;
   font-size: 14px;
@@ -1947,8 +1957,11 @@ address {
   box-sizing: content-box;
   width: 41px;
   margin: 0;
+  margin-right: 0;
+  margin-left: auto;
   padding: 0;
-  padding-left: 231px;
+
+  list-style: none;
 }
 
 .up,
@@ -2125,6 +2138,9 @@ address {
 
 .item-color {
   margin: 0;
+  padding-left: 0;
+
+  list-style: none;
 }
 
 .item-color li,
@@ -2139,7 +2155,7 @@ address {
 
   margin: 0;
   padding: 0;
-  padding-left: 40px;
+  padding-left: 38px;
 
   font-weight: 300;
   font-size: 14px;
@@ -2150,28 +2166,7 @@ address {
   letter-spacing: 0.1px;
 }
 
-.filter-btn {
-  z-index: 2;
 
-  width: 200px;
-
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 24px;
-  font-family: "Gilroy ExtraBold", "Arial", "sans-serif";
-  vertical-align: center;
-  color: #000000;
-  text-transform: uppercase;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: 3.6px;
-
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-
-  text-decoration-line: none;
-}
 
 .filter-btn:hover,
 .filter-btn:focus,
@@ -2183,6 +2178,7 @@ address {
   position: absolute;
 
   -webkit-appearance: none;
+          appearance: none;
 }
 
 .check {
@@ -2243,23 +2239,28 @@ address {
 }
 
 .bt-filter {
-  margin-top: 32px;
+  margin-top: 31px;
   margin-bottom: 0;
 }
 
 .item-bluetooth {
   margin-top: 18px;
+  padding-left: 0;
+
+  list-style: none;
 }
 
 .radio {
   position: absolute;
 
   -webkit-appearance: none;
+          appearance: none;
 }
 
 .radio-check {
   position: absolute;
   bottom: 8px;
+  left: -2px;
   z-index: 1;
 
   width: 25px;
@@ -2313,6 +2314,17 @@ address {
   opacity: 0.25;
 }
 
+.filter-btn {
+  z-index: 2;
+
+  width: 200px;
+  margin-top: 31px;
+  margin-left: -1px;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
 .right-column {
   width: 100%;
 
@@ -2348,7 +2360,7 @@ address {
 .new::before {
   content: "new";
   position: absolute;
-  top: 47px;
+  top: 49px;
   right: 27px;
   z-index: 3;
 
@@ -2472,15 +2484,16 @@ address {
   align-items: baseline;
   width: 100%;
   padding-top: 11px;
-  padding-bottom: 7px;
+  padding-bottom: 8px;
 }
 
 /*_________________________Навигация по результатам поиска____________________________________*/
 .nav-wrapper {
   width: 100%;
-  margin-bottom: 75px;
-  padding-top: 10px;
-  padding-left: 70px;
+  margin-bottom: 77px;
+  padding: 0;
+  padding-top: 9px;
+  padding-left: 72px;
 
   background-color: white;
 }
@@ -2490,7 +2503,9 @@ address {
   justify-content: space-between;
   min-height: 70px;
   margin: 0 auto;
-  padding: 23px 0;
+  padding: 0;
+
+  list-style: none;
 
   background-color: #ebebeb;
 }
@@ -2498,12 +2513,21 @@ address {
 .pages {
   display: flex;
   justify-content: flex-start;
+  min-width: 86px;
   margin: 0;
+  padding-left: 0;
+
+  list-style: none;
 }
 
+.pages li {
+  padding-top: 25px;
+  padding-right: 28px;
+}
+.pages li:last-of-type {
+  padding-right: 0;
+}
 .nav {
-  padding-right: 31px;
-
   font-weight: 800;
   font-size: 16px;
   line-height: 24px;
@@ -2519,10 +2543,6 @@ address {
   color: rgba(0, 0, 0, 1);
 }
 
-.pages li:last-of-type .nav {
-  padding-right: 0;
-}
-
 .nav:hover {
   color: rgba(0, 0, 0, 0.6);
 }
@@ -2532,7 +2552,10 @@ address {
 }
 
 .nav-btn {
-  padding: 25px 30px;
+  display: block;
+  width: 136px;
+  height: 70px;
+  padding: 24px 30px;
 
   font-weight: 800;
   font-size: 16px;
@@ -2540,6 +2563,7 @@ address {
   font-family: "Gilroy ExtraBold", "Arial", "sans-serif";
   text-align: left;
   color: rgba(0, 0, 0, 1);
+  text-transform: uppercase;
   font-style: normal;
   font-stretch: normal;
   letter-spacing: 3.2px;
