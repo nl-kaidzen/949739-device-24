@@ -6,7 +6,6 @@
   <title>Девайс-интернет магазин гаджетов</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300&amp;subset=cyrillic" rel="stylesheet">
 </head>
 
 <body>
@@ -297,8 +296,7 @@
       <section class="info">
         <h2>О нас</h2>
         <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
-        <p>Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными
-          компаниями:</p>
+        <p>Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными компаниями:</p>
         <ul class="info-logistics-company">
           <li>Деловые Линии</li>
           <li>Автотрейдинг</li>
@@ -311,7 +309,8 @@
         <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки.
           Всякое бывает.</p>
         <a href="map.html" class="map-modal">
-          <img src="img/map.jpg" alt="Карта с адресом пункта вывоза по адресу г. Москва, ул. Строителей, 15" class="contacts-map" width="560" height="222">
+          <img src="img/map.jpg" alt="Карта с адресом пункта вывоза по адресу г. Москва, ул. Строителей, 15" class="contacts-map"
+            width="560" height="222">
         </a>
         <a href="write-us.html" class="write-us device-btn">Напишите нам</a>
       </section>
@@ -413,7 +412,7 @@
     var link_write = document.querySelector(".write-us");
     var link_map = document.querySelector(".contacts-map");
     var letter_popup = document.querySelector(".modal-letter");
-    var map_popup =document.querySelector(".modal-map");
+    var map_popup = document.querySelector(".modal-map");
     var letter_close = document.querySelector(".letter-close");
     var map_close = document.querySelector(".map-close");
 
@@ -427,18 +426,18 @@
     var em_storage = ""; /*Хранилище email*/
 
     try {
-    un_storage = localStorage.getItem("username");
+      un_storage = localStorage.getItem("username");
     } catch (err) {
-    isStorageSupport = false;
+      isStorageSupport = false;
     }
 
     try {
-    em_storage = localStorage.getItem("e_mail");
+      em_storage = localStorage.getItem("e_mail");
     } catch (err_1) {
-    isStorageSupport = false;
+      isStorageSupport = false;
     }
 
-    link_write.addEventListener("click", function(evt) {
+    link_write.addEventListener("click", function (evt) {
       evt.preventDefault();
       letter_popup.classList.add("modal-show");
       if (un_storage) {
@@ -453,24 +452,24 @@
       }
     });
 
-    link_map.addEventListener("click", function(evt) {
+    link_map.addEventListener("click", function (evt) {
       evt.preventDefault();
       map_popup.classList.add("modal-show");
     })
 
-    letter_close.addEventListener("click", function(evt) {
+    letter_close.addEventListener("click", function (evt) {
       evt.preventDefault();
       letter_popup.classList.remove("modal-show");
       letter_popup.classList.remove("modal-error");
 
     });
 
-    map_close.addEventListener("click", function(evt) {
+    map_close.addEventListener("click", function (evt) {
       evt.preventDefault();
       map_popup.classList.remove("modal-show");
     });
 
-    form.addEventListener("submit", function(evt) {
+    form.addEventListener("submit", function (evt) {
       if (!username.value || !e_mail.value) {
         evt.preventDefault();
         letter_popup.classList.remove("modal-error");
@@ -478,24 +477,25 @@
         letter_popup.classList.add("modal-error");
       } else {
         if (isStorageSupport) {
-        localStorage.setItem("username", username.value);
-        localStorage.setItem("e_mail", e_mail.value);
+          localStorage.setItem("username", username.value);
+          localStorage.setItem("e_mail", e_mail.value);
         }
       }
     });
 
     window.addEventListener("keydown", function (evt) {
-    if (evt.keyCode === 27) {
-      evt.preventDefault();
-      if (letter_popup.classList.contains("modal-show")) {
-        letter_popup.classList.remove("modal-show");
-        letter_popup.classList.remove("modal-error");
+      if (evt.keyCode === 27) {
+        evt.preventDefault();
+        if (letter_popup.classList.contains("modal-show")) {
+          letter_popup.classList.remove("modal-show");
+          letter_popup.classList.remove("modal-error");
+        }
+        if (map_popup.classList.contains("modal-show")) {
+          map_popup.classList.remove("modal-show");
+        }
       }
-      if (map_popup.classList.contains("modal-show")) {
-        map_popup.classList.remove("modal-show");
-      }
-    }
-  });
+    });
+
   </script>
 </body>
 
