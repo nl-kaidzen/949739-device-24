@@ -5,8 +5,7 @@
   <meta charset="utf-8">
   <title>Моноподы</title>
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
@@ -161,7 +160,8 @@
 
         </div>
         <div class="right-column">
-          <section class="found-item" aria-label="Результаты поиска">
+          <section class="found-item">
+            <h2 class="visually-hidden">Найденые товары</h2>
             <article class="item-card">
               <div class="item-hover-wrapper">
                 <img src="img/monopod-starter.jpg" class="item-img" width="360" height="380" alt="Фотография любительской селфи-палки">
@@ -224,13 +224,13 @@
             </article>
           </section>
           <div class="nav-wrapper">
-            <ul class="nav-list">
+            <ul class="nav-list" aria-label="Навигация по каталогу найденых товаров">
               <!--Можно добавить aria-label=Навигация по каталогу (непонятно что за 5 ссылок)-->
               <li class="link">
                 <a href="#" class="nav-btn">Назад</a>
               </li>
               <li class="link">
-                <ul class="pages" aria-label="Ссылки на страницы">
+                <ul class="pages">
                   <li class="link"><a href="#" class="nav nav-current">1</a></li>
                   <li class="link"><a href="#" class="nav">2</a></li>
                   <li class="link"><a href="#" class="nav">3</a></li>
