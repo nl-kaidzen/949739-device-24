@@ -461,10 +461,9 @@ img {
   display: -ms-flexbox;
   display: flex;
   justify-content: flex-start;
-  width: 1200px;
+  width: 1160px;
   min-height: 163px;
   margin: 0;
-  padding: 0 20px;
   padding-top: 20px;
 
   list-style: none;
@@ -477,7 +476,7 @@ img {
 
 .sub-menu {
   position: absolute;
-  left: -80px;
+  left: -60px;
 
   display: none;
   padding-left: 0;
