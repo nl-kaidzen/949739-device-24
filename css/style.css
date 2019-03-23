@@ -104,14 +104,14 @@ img {
 }
 
 /*Хедер и навигация*/
-header {
+.main-header {
   position: relative;
 
   display: block;
-  width: 1160px;
+  width: 1200px;
   min-height: 299px;
   margin: 40px auto 0 auto;
-  padding: 0;
+  padding: 0 20px;
 
   background-color: rgba(240, 197, 46, 0.5);
 }
@@ -188,6 +188,7 @@ header {
   position: relative;
 
   width: 355px;
+  height: 48px;
   padding: 8px 0 8px 38px;
 
   font-weight: 300;
@@ -461,11 +462,11 @@ header {
   display: -ms-flexbox;
   display: flex;
   justify-content: flex-start;
-  width: 1160px;
+  width: 1200px;
   min-height: 163px;
   margin: 0;
+  padding: 0 20px;
   padding-top: 20px;
-  padding-left: 0;
 
   list-style: none;
 
@@ -477,7 +478,7 @@ header {
 
 .sub-menu {
   position: absolute;
-  left: -60px;
+  left: -80px;
 
   display: none;
   padding-left: 0;
@@ -513,7 +514,7 @@ header {
 }
 
 .column:first-child {
-  margin-left: 60px;
+  margin-left: 80px;
 }
 
 .column:last-child {
@@ -572,7 +573,7 @@ header {
   background-color: #ffffff;
 }
 
-.sliderr {
+.slider {
   min-height: 400px;
 }
 
@@ -647,6 +648,15 @@ header {
 
 #slide-3:checked ~ .slider-control label[for="slide-3"] {
   background-image: url("../img/slider-button.svg");
+}
+
+#slide-1:checked:focus ~ .slider-control label[for="slide-1"],
+#slide-2:checked:focus ~ .slider-control label[for="slide-2"],
+#slide-3:checked:focus ~ .slider-control label[for="slide-3"] {
+  outline-width: 2px;
+  outline-style: auto;
+  outline-color: rgb(77, 144, 254);
+  outline-offset: 0;
 }
 
 #slide-1:checked ~ .slider-container .slide-first {
@@ -903,6 +913,9 @@ header {
   opacity: 0.3;
 }
 
+.btn-bg:active + p {
+  color: rgba(0, 0, 0, 0.3);
+}
 .products-item {
   margin-right: 40px;
 }
@@ -965,22 +978,14 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  min-width: 1200px;
+  margin: auto;
   padding-top: 54px;
 
   background-color: #e5e5e5;
   background-image: linear-gradient(white 154px, transparent 154px);
 }
 
-.services-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 1200px;
-  margin: auto;
-  padding: 0 20px;
-  overflow: hidden;
-}
 
 .service-slider {
   position: relative;
@@ -988,6 +993,9 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 1200px;
+  margin: auto;
+  padding: 0 20px;
 }
 
 .btn-list {
@@ -1078,21 +1086,6 @@ header {
   color: #f7e184;
 }
 
-.services-list {
-  position: relative;
-
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: flex-start;
-  width: 300%;
-  margin: 0 auto;
-  padding: 0;
-
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-}
-
 .service-item {
   min-width: 875px;
 }
@@ -1120,12 +1113,10 @@ header {
 .services-credit {
   position: relative;
 
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -ms-flex-direction: column;
       flex-direction: column;
-  width: 100%;
+  width: 875px;
   min-height: 388px;
 
   -webkit-box-direction: normal;
@@ -1235,16 +1226,16 @@ header {
   background: black;
 }
 
-#service-1:checked ~ .service-control label[for="service-1"]::before,
-#service-2:checked ~ .service-control label[for="service-2"]::before,
-#service-3:checked ~ .service-control label[for="service-3"]::before {
+#service-1:checked:focus ~ .service-control label[for="service-1"]::before,
+#service-2:checked:focus ~ .service-control label[for="service-2"]::before,
+#service-3:checked:focus ~ .service-control label[for="service-3"]::before {
   top: 0;
 
   width: 280px;
   height: 100%;
 
   background: black;
-  outline-width: 5px;
+  outline-width: 2px;
   outline-style: auto;
   outline-color: rgb(77, 144, 254);
   outline-offset: -2px;
@@ -1256,20 +1247,24 @@ header {
   color: #f7e184;
 }
 
+/*Переключение слайдов сервисы"*/
 
-#service-1:checked ~ .services-list {
-  -webkit-transform: translate(0);
-          transform: translate(0);
+#service-1:checked ~ .services-delivery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-#service-2:checked ~ .services-list {
-  -webkit-transform: translate(-875px);
-          transform: translate(-875px);
+#service-2:checked ~ .services-warranty {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-#service-3:checked ~ .services-list {
-  -webkit-transform: translate(-1750px);
-          transform: translate(-1750px);
+#service-3:checked ~ .services-credit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /*Блок Партнеры*/
@@ -1441,12 +1436,12 @@ header {
 
 
 /*Футер*/
-footer {
+.main-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   justify-content: flex-start;
-  width: 100%;
+  min-width: 1200px;
 
   background-color: #464646;
 
@@ -1465,6 +1460,8 @@ footer {
   margin: 0 auto;
   padding: 0 20px;
 
+  background-color: #464646;
+
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
   -webkit-box-pack: start;
@@ -1476,7 +1473,7 @@ footer {
   display: -ms-flexbox;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 1160px;
 
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
@@ -1538,11 +1535,16 @@ footer {
   font-size: 15px;
   line-height: 30px;
   font-family: "Open Sans", "Arial", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
   text-transform: none;
   text-decoration: none;
   font-style: normal;
   letter-spacing: 0.2px;
+}
+
+.profile,
+.footer-compare,
+.footer-cart {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .footer-user-link a::before {
@@ -1593,6 +1595,10 @@ footer {
 
 .footer-user-link a:active::before {
   opacity: 0.3;
+}
+
+.footer-logout {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 
@@ -2245,7 +2251,7 @@ address {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  min-width: 1200px;
 
   background-image: -webkit-gradient(linear, left top, right top, color-stop(20%, #dcdcdc), color-stop(20%, #eeeeee));
   background-image: linear-gradient(to right, #dcdcdc 20%, #eeeeee 20%);
@@ -2644,7 +2650,7 @@ address {
 
 .check-box:focus:checked + .check,
 .check-box:focus + .check {
-  outline-width: 5px;
+  outline-width: 2px;
   outline-style: auto;
   outline-color: rgb(77, 144, 254);
   outline-offset: -2px;
@@ -2744,7 +2750,7 @@ address {
 
 .radio:focus:checked + .radio-check,
 .radio:focus + .radio-check {
-  outline-width: 5px;
+  outline-width: 2px;
   outline-style: auto;
   outline-color: rgb(77, 144, 254);
   outline-offset: -2px;
