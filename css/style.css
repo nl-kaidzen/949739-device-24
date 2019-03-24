@@ -108,11 +108,10 @@ img {
   position: relative;
 
   display: block;
-  width: 1160px;
+  width: 1200px;
   min-height: 299px;
   margin: 40px auto 0 auto;
-
-  background-color: rgba(240, 197, 46, 0.5);
+  padding: 0 20px;
 }
 
 .catalog-header {
@@ -126,10 +125,17 @@ img {
   -ms-flex-direction: column;
       flex-direction: column;
   width: 1160px;
+  min-height: 186px;
   margin: 0 auto;
+
+  background-color: rgba(240, 197, 46, 0.5);
 
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
+}
+
+.index-header {
+  min-height: 299px;
 }
 
 .header-logo {
@@ -512,7 +518,7 @@ img {
 }
 
 .column:first-child {
-  margin-left: 80px;
+  margin-left: 60px;
 }
 
 .column:last-child {
